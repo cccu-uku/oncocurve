@@ -96,7 +96,7 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8",
     "vitest": "^4.1.12",
-    "webpack": "^5.106.2"
+    "webpack": "^5.112.2"
   },
   "optionalDependencies": {
     "@next/swc-darwin-arm64": "16.4.2",
