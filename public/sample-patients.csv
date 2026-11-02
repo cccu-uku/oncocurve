@@ -1,0 +1,26 @@
+PatientID,Gender,BirthDate,TumorType,TumorCategory,TumorLocation,DiagnosisDate,DeathDate,LastContactDate,Event,Grading,Staging,TNM_T,TNM_N,TNM_M
+P001,W,1960-03-15,C50.4,Mammakarzinom,Brust,2019-02-10,2022-08-12,,true,G2,IIB,T2,N1,M0
+P002,W,1964-07-22,C50.9,Mammakarzinom,Brust,2020-05-20,,2024-10-15,false,G1,IA,T1,N0,M0
+P003,M,1958-11-08,C50.9,Mammakarzinom,Brust,2018-08-14,2021-03-05,,true,G3,IV,T3,N2,M1
+P004,W,1970-02-25,C50.2,Mammakarzinom,Brust,2021-01-10,,2024-08-20,false,G1,IA,T1,N0,M0
+P005,W,1956-09-04,C50.8,Mammakarzinom,Brust,2019-06-18,,2024-11-10,false,G2,IIA,T2,N0,M0
+P006,W,1952-12-30,C50.5,Mammakarzinom,Brust,2017-10-22,2021-05-18,,true,G3,IV,T4,N2,M1
+P007,W,1967-04-11,C50.4,Mammakarzinom,Brust,2020-03-15,,2024-07-20,false,G2,IIB,T2,N1,M0
+P008,W,1972-06-28,C50.9,Mammakarzinom,Brust,2021-09-05,,2024-12-10,false,G1,IA,T1,N0,M0
+P009,M,1957-08-19,C34.1,Bronchialkarzinom,Lunge,2018-11-10,2020-12-15,,true,G3,IIIB,T3,N2,M0
+P010,W,1963-03-14,C34.3,Bronchialkarzinom,Lunge,2019-07-25,,2024-09-10,false,G2,IB,T2,N0,M0
+P011,M,1950-01-06,C34.8,Bronchialkarzinom,Lunge,2017-04-20,2019-08-30,,true,G3,IV,T4,N3,M1
+P012,W,1968-10-12,C34.1,Bronchialkarzinom,Lunge,2022-02-14,,2024-11-20,false,G1,IA,T1,N0,M0
+P013,M,1954-06-07,C18.7,Kolonkarzinom,Kolon,2018-05-30,2022-01-10,,true,G2,IIIA,T3,N1,M0
+P014,W,1962-09-23,C18.2,Kolonkarzinom,Kolon,2020-03-18,,2023-10-20,false,G2,IIA,T2,N0,M0
+P015,M,1968-11-15,C18.4,Kolonkarzinom,Kolon,2021-07-12,,2024-12-20,false,G2,IIB,T3,N0,M0
+P016,W,1946-03-01,C18.7,Kolonkarzinom,Kolon,2016-09-08,2020-06-15,,true,G3,IV,T4,N2,M1
+P017,M,1950-07-19,C61,Prostatakarzinom,Prostata,2018-03-25,,2024-08-15,false,G2,II,T2,N0,M0
+P018,M,1956-11-28,C61,Prostatakarzinom,Prostata,2019-12-10,,2024-10-25,false,G1,I,T1,N0,M0
+P019,M,1942-04-05,C61,Prostatakarzinom,Prostata,2017-06-12,2022-03-20,,true,G3,IV,T3,N1,M1
+P020,M,1962-02-14,C61,Prostatakarzinom,Prostata,2021-04-22,,2024-09-15,false,G1,II,T2,N0,M0
+P021,W,1958-08-20,C20,Rektumkarzinom,Rektum,2019-11-15,,2024-07-10,false,G2,I,T2,N0,M0
+P022,M,1953-05-18,C20,Rektumkarzinom,Rektum,2018-02-28,2021-09-12,,true,G3,IIIB,T3,N2,M0
+P023,W,1969-01-30,C20,Rektumkarzinom,Rektum,2022-01-18,,2024-12-05,false,G1,I,T1,N0,M0
+P024,M,1948-11-09,C83.3,Diffuses grosszelliges B-Zell-Lymphom,Lymphknoten,2017-08-15,2021-04-30,,true,G3,II,T2,N0,M0
+P025,W,1960-06-22,C83.3,Diffuses grosszelliges B-Zell-Lymphom,Lymphknoten,2020-09-08,,2024-11-25,false,G2,I,T1,N0,M0

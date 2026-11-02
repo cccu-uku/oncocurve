@@ -1,0 +1,207 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XML-BlackBox">
+	<xs:element name="Patienten">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="InfoXML" type="InfoXML_ComplexType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="Patient" type="Patient_ComplexType" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute processContents="skip"/>
+			<!--the Tag Patienten can have any added attribute and the XML file still passes validation -->
+		</xs:complexType>
+		<xs:unique name="PatientenIDMustBeUnique">
+			<xs:selector xpath="Patient/BasicInformation"/>
+			<xs:field xpath="PatientID"/>
+		</xs:unique>
+		<xs:unique name="CaseIDMustBeUnique">
+			<xs:selector xpath="Patient/Case/CaseInformation"/>
+			<xs:field xpath="CaseID"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="InfoXML_ComplexType">
+		<xs:sequence>
+			<xs:element name="DateXML" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="NameTudocu" type="String_But_Do_Not_Allow_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="VersionTudocu" type="String_But_Do_Not_Allow_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Patient_ComplexType">
+		<xs:sequence>
+			<xs:element name="BasicInformation" type="BasicInformation_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Case" type="Case_ComplexType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Case_ComplexType">
+		<xs:sequence>
+			<xs:element name="CaseInformation" type="CaseInformation_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Diagnosis" type="Diagnosis_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="TumourBoard" type="TumourBoard_ComplexType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="Surgery" type="Surgery_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="SurgeryCourse" type="SurgeryCourse_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PostoperativeHistology" type="PostoperativeHistology_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Radiotherapy" type="Radiotherapy_ComplexType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="Treatment" type="Treatment_ComplexType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="DKGQuestionnaire" type="DKGQuestionnaire_ComplexType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="FollowUp" type="FollowUp_ComplexType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BasicInformation_ComplexType">
+		<xs:sequence>
+			<xs:element name="PatientID" type="String_But_Do_Not_Allow_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CountryCode" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ZipCode" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Birthday" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Gender" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DateOfDeath" type="Allows_Date_and_EmptyString_Type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CaseInformation_ComplexType">
+		<xs:sequence minOccurs="1" maxOccurs="1">
+			<xs:element name="CenterCase" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CaseID" type="String_But_Do_Not_Allow_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DateIntroduce" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PrimaryTumour" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Comorbidities" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="PatientIntroduced" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Consent" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Trial" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="PsychooncologicalCounseling" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="SocialserviceCounseling" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Diagnosis_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="DateDiagnosis" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ICD10" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="BasisDiagnosis" type="Allows_Int_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PSALevel" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="cT" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="cN" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="cM" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CoresTaken" type="Allows_Int_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CoresInvolved" type="Allows_Int_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Percentage" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="preGleason1" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="preGleason2" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="TumourBoard_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="BoardDate" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="BoardTime" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Surgery_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="SurgeryDate" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="SurgeryType" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Lymphadenectomy" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="SurgicalMethod" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Nervesparing" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Surgeon1" type="xs:string" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Surgeon2" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="SurgeryCourse_ComplexType">
+		<xs:sequence minOccurs="1" maxOccurs="1">
+			<xs:element name="Revision" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ClavienDindo" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PostoperativeHistology_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="IncidentalFinding" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="pT" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="pN" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="pM" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="postGleason1" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="postGleason2" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="NodesTaken" type="Allows_Int_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="NodesInvolved" type="Allows_Int_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="MarginStatus" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="MarginStatusFocal" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Radiotherapy_ComplexType">
+		<xs:sequence minOccurs="1" maxOccurs="1">
+			<xs:element name="RadiotherapyType" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RadiotherapyTime" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RadiotherapyIntent" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RadiotherapyInitiation" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Dose" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Fraction" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OngoingRadio" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RadiotherapyEnd" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="CTCAEGrade" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="Domain" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Treatment_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="TreatmentType" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="TreatmentTime" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="TreatmentIntent" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="TreatmentInitiation" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="OngoingTreatment" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="TreatmentEnd" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="DKGQuestionnaire_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="DateDKGQuestionnaire" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="TimeDKGQuestionnaire" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PSADKGQuestionnaire" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PSADateDKGQuestionnaire" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LifeDKGQuestionnaire" type="Allows_Int_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="HealthDKGQuestionnaire" type="Allows_Int_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ICIQDKGQuestionnaire" type="Allows_Int_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="IIEFDKGQuestionnaire" type="Allows_Int_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="FollowUp_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="FollowUpDate" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LifeStatus" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="FollowUpPSA" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="LocalRecurrence" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DateRecurrence" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="BiochemicalRecurrence" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DateBiochemical" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Metastasis" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="DateMetastasis" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="TumourStatus" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="SecondaryTumour" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="Allows_Int_and_EmptyString_Type">
+		<xs:union memberTypes="xs:unsignedInt">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value=""/>
+					<xs:enumeration value=" "/>
+					<xs:enumeration value="  "/>
+					<xs:enumeration value="   "/>
+					<xs:enumeration value="    "/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	<xs:simpleType name="Allows_Date_and_EmptyString_Type">
+		<xs:union memberTypes="xs:date">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value=""/>
+					<xs:enumeration value=" "/>
+					<xs:enumeration value="  "/>
+					<xs:enumeration value="   "/>
+					<xs:enumeration value="    "/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	<xs:simpleType name="String_But_Do_Not_Allow_EmptyString_Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:pattern value=".*[^\s].*"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

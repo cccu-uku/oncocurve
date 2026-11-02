@@ -1,0 +1,49 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below."
+type: software
+title: ONCOcurve
+abstract: >-
+  Browser-based survival analysis for oncological cohorts: Kaplan-Meier
+  curves, log-rank tests and Cox regression from cancer registry exports
+  (oBDS), OncoBox files or simple tables. All data processing runs locally
+  in the browser.
+authors:
+  - family-names: Stiegler
+    given-names: Veronika
+    orcid: "https://orcid.org/0000-0002-0675-4853"
+    affiliation: "Universitätsklinikum Ulm (Comprehensive Cancer Center Ulm, CCCU)"
+version: 1.0.0
+date-released: "2026-11-04"
+license: AGPL-3.0-only
+repository-code: "https://github.com/cccu-uku/oncocurve"
+keywords:
+  - survival analysis
+  - Kaplan-Meier
+  - Cox regression
+  - log-rank test
+  - cancer registry
+  - oBDS
+  - oncology
+preferred-citation:
+  type: unpublished
+  title: "ONCOcurve: Development and Validation of a Privacy-Preserving, Browser-Based Platform for Automated Survival Analysis from Oncological Routine Data"
+  authors:
+    - family-names: Stiegler
+      given-names: Veronika
+      orcid: "https://orcid.org/0000-0002-0675-4853"
+    - family-names: Tausch
+      given-names: Eugen
+    - family-names: Neidhard
+      given-names: Christoph
+    - family-names: Götz
+      given-names: Michael
+    - family-names: Fürstberger
+      given-names: Axel
+    - family-names: Nasseh
+      given-names: Daniel
+    - family-names: Tufman
+      given-names: Amanda
+    - family-names: Stilgenbauer
+      given-names: Stephan
+  year: 2026
+  notes: "Manuscript submitted to the Journal of Medical Internet Research"

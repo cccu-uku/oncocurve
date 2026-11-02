@@ -1,0 +1,75 @@
+# One-command HTTPS deployment for an on-prem server: the plain Next.js app
+# container behind an unmodified, official `caddy:2-alpine` container that
+# terminates TLS. Works without any configuration; optional settings go into a
+# `.env` file next to this one (copy .env.example).
+#
+#   docker compose up -d                          # start
+#   docker compose pull && docker compose up -d   # update
+#   docker compose logs -f
+#   docker compose down
+#
+# Building locally from source: see docker-compose.build.yml.
+#
+# Default (SITE_ADDRESS=:443) serves HTTPS with a self-signed certificate, so it
+# works immediately when the server is reached over its IP (browsers show a
+# one-time warning). To remove the warning, either point an institute hostname
+# directly at the server IP and set SITE_ADDRESS to it (automatic Let's Encrypt),
+# or mount your institutional certificate and set TLS_CERT/TLS_KEY.
+#
+# Caddy runs the untouched official image; its Caddyfile is generated at
+# container start by caddy-entrypoint.sh (bind-mounted below) entirely inside
+# the caddy container's own filesystem, so nothing under /etc/caddy needs to
+# exist on the host.
+
+services:
+  app:
+    # Prebuilt image; set the version via ONCOCURVE_IMAGE in .env.
+    image: ${ONCOCURVE_IMAGE:-ghcr.io/cccu-uku/oncocurve:1}
+    container_name: oncocurve-app
+    restart: unless-stopped
+    expose:
+      - "3000"
+    environment:
+      # Optional: further sites allowed to embed ONCOcurve in an iframe
+      FRAME_ANCESTORS: ${FRAME_ANCESTORS:-}
+    volumes:
+      # Operator details (legal notice, logo): config/betreiber.json
+      - ./config:/app/config:ro
+      # Custom logo as a single file; set its path in config/betreiber.json under logo.src (here "/logo.png")
+      # - ./logo.png:/app/public/logo.png:ro
+    mem_limit: 1g
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: oncocurve-caddy
+    restart: unless-stopped
+    mem_limit: 256m
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+      - "443:443"
+      - "80:80"   # used for the Let's Encrypt challenge and http->https redirect
+    environment:
+      APP_HOST: app
+      APP_PORT: 3000
+      # ":443" = self-signed cert on any hostname/IP (default). Set to your
+      # institute hostname (e.g. onco.uni-xy.de) for an automatic Let's Encrypt
+      # certificate. This requires that hostname to resolve to THIS server and ports
+      # 80/443 to be reachable from the internet.
+      SITE_ADDRESS: ${SITE_ADDRESS:-:443}
+      # Optional: institutional certificate mounted via the volume below.
+      TLS_CERT: ${TLS_CERT:-}
+      TLS_KEY: ${TLS_KEY:-}
+    entrypoint: ["/bin/sh", "/caddy-entrypoint.sh"]
+    volumes:
+      - caddy_data:/data       # persists the self-signed CA / issued certs
+      - caddy_config:/config
+      - ./caddy-entrypoint.sh:/caddy-entrypoint.sh:ro
+      # To use an institutional certificate, mount it read-only and set
+      # TLS_CERT=/certs/onco.crt and TLS_KEY=/certs/onco.key in .env:
+      # - ${CERT_DIR:-./certs}:/certs:ro
+
+volumes:
+  caddy_data:
+  caddy_config:

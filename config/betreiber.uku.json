@@ -1,0 +1,89 @@
+{
+  "logo": {
+    "src": "/cccu_logo.png",
+    "alt": {
+      "de": "Logo des Comprehensive Cancer Center Ulm",
+      "en": "Comprehensive Cancer Center Ulm Logo"
+    },
+    "breite": 152,
+    "hoehe": 40
+  },
+  "impressum": {
+    "de": [
+      {
+        "titel": "Projekt",
+        "text": "Dieser Internetauftritt ist Teil des unter der Bezeichnung ONCOnnect durch die Stiftung Deutsche Krebshilfe geförderten Verbundprojekts zu Weiterentwicklung regionaler Outreach-Netzwerke der 14 von der Deutschen Krebshilfe geförderten Onkologischen Spitzenzentren, des Nationalen Krebspräventionszentrums in Heidelberg und von Patientenvertretungen (www.ccc-onconnect.de).\nDiese Webseite wird als Diensteanbieter im Rahmen der Aufgabenteilung innerhalb des Verbundprojekts verantwortet von:"
+      },
+      {
+        "titel": "Anbieter",
+        "text": "Universitätsklinikum Ulm\n89070 Ulm\nRechtsfähige Anstalt des öffentlichen Rechts der Universität Ulm gemäß § 1\nAbs.1 Nr.4 UKG (Universitätsklinika-​Gesetz)"
+      },
+      {
+        "titel": "Vertreten durch",
+        "text": "Leitender Ärztlicher Direktor Prof. Dr. Udo X. Kaisers\nKaufmännische Direktorin Christa Hohner"
+      },
+      {
+        "titel": "Kontakt",
+        "text": "Post: Universitätsklinikum Ulm, Vorstand, 89070 Ulm\nTelefon: 0731/500-0\nTelefax: 0731/500-43032\n\nCCCU IT\nTelefon: 073150056088\nE-Mail: service.cccu@uniklinik-ulm.de\nWeb: https://www.uniklinik-ulm.de/comprehensive-cancer-center-ulm-cccu.html"
+      },
+      {
+        "titel": "Umsatzsteuer-ID",
+        "text": "DE147040060"
+      },
+      {
+        "titel": "Aufsichtsbehörde",
+        "text": "Ministerium für Wissenschaft, Forschung und Kunst Baden-​Württemberg\nKönigstraße 46\n70173 Stuttgart"
+      },
+      {
+        "titel": "Zuständige Medienaufsichtsbehörde",
+        "text": "Landesanstalt für Kommunikation Baden-Württemberg (LFK)"
+      },
+      {
+        "titel": "Kammern",
+        "text": "• Ärztekammer\n• Zahnärztekammer\n• Apothekerkammer\n• Psychotherapeutenkammer\n\nSoweit andere Berufe im Sinne von § 5 Nr. 5 TMG (Telemediengesetz) individuell Tele- oder Mediendienste im Rahmen ihrer Berufsausübung anbieten oder erbringen, ist dies beim jeweiligen Angebot vermerkt. Dies gilt auch für Berufsbezeichnungen, die nicht in Deutschland verliehen wurden."
+      },
+      {
+        "titel": "Streitbeilegung",
+        "text": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren teilzunehmen."
+      }
+    ],
+    "en": [
+      {
+        "titel": "Project",
+        "text": "This website is part of the consortium project funded by the German Cancer Aid Foundation under the name ONCOnnect to further develop regional outreach networks of the 14 oncology centers of excellence funded by German Cancer Aid, the National Cancer Prevention Center in Heidelberg, and patient representatives (www.ccc-onconnect.de).\nThis website is operated as a service provider within the division of tasks of the consortium project by:"
+      },
+      {
+        "titel": "Provider",
+        "text": "Ulm University Hospital\n89070 Ulm\nPublic law institution of the University of Ulm with legal capacity pursuant to Section 1 (1) No. 4 UKG (University Hospitals Act)"
+      },
+      {
+        "titel": "Represented by",
+        "text": "Chief Medical Director Prof Dr Udo X. Kaisers\nCommercial Director Christa Hohner"
+      },
+      {
+        "titel": "Contact",
+        "text": "Post: Universitätsklinikum Ulm, Vorstand, 89070 Ulm\nTelefon: 0731/500-0\nTelefax: 0731/500-43032\n\nCCCU IT\nPhone: +49 731 500-56088\nEmail: service.cccu@uniklinik-ulm.de\nWeb: https://www.uniklinik-ulm.de/comprehensive-cancer-center-ulm-cccu.html"
+      },
+      {
+        "titel": "VAT ID",
+        "text": "DE147040060"
+      },
+      {
+        "titel": "Supervisory authority",
+        "text": "Ministry of Science, Research and the Arts Baden-Württemberg\nKönigstraße 46\n70173 Stuttgart"
+      },
+      {
+        "titel": "Responsible media authority",
+        "text": "State Media Authority of Baden-Württemberg (LFK)"
+      },
+      {
+        "titel": "Chambers",
+        "text": "• Medical Association\n• Dental Association\n• Pharmaceutical Association\n• Psychotherapists' Chamber\n\nInsofar as other professions within the meaning of § 5 No. 5 TMG (Telemedia Act) offer or provide individual tele- or media services as part of their professional practice, this is noted in the respective offer. This also applies to professional titles that were not awarded in Germany."
+      },
+      {
+        "titel": "Dispute resolution",
+        "text": "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board."
+      }
+    ]
+  }
+}

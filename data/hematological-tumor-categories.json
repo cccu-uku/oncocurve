@@ -1,0 +1,40 @@
+{
+  "categories": [
+    {
+      "name": "ALL/Lymphoblastisches Lymphom",
+      "icd10": ["C83.5", "C91.0"]
+    },
+    {
+      "name": "AML",
+      "icd10": ["C92.0", "C92.3", "C92.4", "C92.5", "C92.6", "C92.8", "C93.0", "C94.0", "C94.1", "C94.2", "C94.3", "C94.4", "C94.7", "C95.0"]
+    },
+    {
+      "name": "Burkitt-ALL/Burkitt-Lymphom",
+      "icd10": ["C83.7", "C91.8"]
+    },
+    {
+      "name": "Hodgkin-Lymphome",
+      "icd10": ["C81"]
+    },
+    {
+      "name": "Non-Hodgkin-Lymphome",
+      "icd10": ["C82", "C83.0", "C83.1", "C83.2", "C83.3", "C83.4", "C83.6", "C83.8", "C83.9", "C84.0", "C84.1", "C84.4", "C84.5", "C84.6", "C84.7", "C84.8", "C84.9", "C85", "C86", "C88"]
+    },
+    {
+      "name": "CLL und andere",
+      "icd10": ["C91.1", "C91.2", "C91.3", "C91.4", "C91.5", "C91.6", "C91.7","C91.8", "C91.9"]
+    },
+    {
+      "name": "Plasmozytom (Malignes Myelom)",
+      "icd10": ["C90"]
+    },
+    {
+      "name": "CML/andere MPN",
+      "icd10": ["C92.1", "D45", "D47.1", "D47.3", "D47.4", "D47.5"]
+    },
+    {
+      "name": "MDS/MDS-MPN",
+      "icd10": ["D46", "C92.2", "C92.3", "C93.1", "C93.2", "C93.3", "C93.4","C93.5","C93.6", "C93.7","C93.8", "C93.9", "C94.6"]
+    }
+  ]
+}

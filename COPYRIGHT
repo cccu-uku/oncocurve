@@ -1,0 +1,105 @@
+ONCOcurve – Kaplan-Meier survival analysis for oncology cohorts
+
+Copyright (C) 2025–2026 Universitätsklinikum Ulm
+                        (Comprehensive Cancer Center Ulm, CCCU)
+                        89070 Ulm, Germany
+
+Developed by: Veronika Stiegler (CCCU)
+
+
+License
+-------
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, version 3.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
+
+You should have received a copy of the GNU Affero General Public License along
+with this program (file LICENSE). If not, see <https://www.gnu.org/licenses/>.
+
+If you modify ONCOcurve and offer it as a network service, you must make the
+complete source code of your modified version available to the users of that
+service under the same license (section 13 of the AGPL-3.0).
+
+
+Source code
+-----------
+
+The complete corresponding source code of every released version, including
+the Dockerfile and all build scripts, is available at
+
+  https://github.com/cccu-uku/oncocurve
+
+under the Git tag of the same version (for example v1.0.0 for the Docker image
+cccuuku/oncocurve:1.0.0). The images carry the source repository and the
+commit they were built from in the labels org.opencontainers.image.source and
+org.opencontainers.image.revision.
+
+
+Liability / Haftung
+-------------------
+
+Additional term under section 7(a) of the AGPL-3.0, supplementing sections 15
+and 16:
+
+1. Operation by third parties. Anyone who operates (hosts) ONCOcurve is solely
+   responsible for the operation, security and data protection of that
+   instance. Universitätsklinikum Ulm (including the CCCU) has no influence on
+   such instances and is not liable for damage arising from their operation,
+   in particular data protection and security incidents, outages or data loss.
+2. Defects of the software. ONCOcurve is provided free of charge and without
+   warranty. For damage caused by defects of the software, including incorrect
+   results, Universitätsklinikum Ulm and the contributors are liable only as
+   set out in item 3. Results must be checked by qualified persons before they
+   are used.
+3. Liability for intent and gross negligence, for injury to life, body or
+   health, and under product liability law remains unaffected.
+
+Zusätzliche Bedingung nach § 7 Abs. 1 lit. a AGPL-3.0, ergänzend zu den
+Abschnitten 15 und 16:
+
+1. Betrieb durch Dritte. Wer ONCOcurve betreibt (hostet), ist für Betrieb,
+   Absicherung und Datenschutz dieser Instanz allein verantwortlich. Das
+   Universitätsklinikum Ulm (einschließlich des CCCU) hat auf solche Instanzen
+   keinen Einfluss und haftet nicht für Schäden aus deren Betrieb,
+   insbesondere nicht für Datenschutz- und Sicherheitsvorfälle, Ausfälle oder
+   Datenverluste.
+2. Fehler der Software. ONCOcurve wird unentgeltlich und ohne Gewährleistung
+   bereitgestellt. Für Schäden aus Fehlern der Software, einschließlich
+   fehlerhafter Auswertungen, haften das Universitätsklinikum Ulm und die
+   Mitwirkenden nur nach Nummer 3. Ergebnisse sind vor ihrer Verwendung
+   fachlich zu prüfen.
+3. Unberührt bleibt die Haftung für Vorsatz und grobe Fahrlässigkeit, für
+   Schäden aus der Verletzung von Leben, Körper oder Gesundheit sowie nach dem
+   Produkthaftungsgesetz.
+
+
+Excluded from the license
+-------------------------
+
+Names, logos and trademarks are not covered by the AGPL license and may not be
+used without the consent of their respective owners. This applies in
+particular to:
+
+  public/cccu_logo.png               Logo of the CCCU / Universitätsklinikum Ulm
+                                     (not included in the Docker image)
+  public/oncocurve-logo.svg,         Logo of ONCOcurve
+  app/icon.svg
+  app/[locale]/opengraph-image.png   Logo of the ONCOnnect network
+
+Anyone operating a modified version must replace these logos as well as the
+legal notice and privacy policy with their own information. The legal notice
+is located in config/betreiber.json of the respective instance, the privacy
+policy in locales/*.json (section "Datenschutz").
+
+
+Third-party content
+-------------------
+
+ONCOcurve contains third-party data and components that are subject to their
+own licenses and attribution requirements. They are listed in the file NOTICE.

@@ -1,0 +1,16 @@
+{
+  "logo": {
+    "src": "/logo.png",
+    "alt": { "de": "Logo der Einrichtung", "en": "Institution logo" },
+    "breite": 152,
+    "hoehe": 40
+  },
+  "impressum": {
+    "de": [
+      { "titel": "Anbieter", "text": "Musterklinik\nMusterstraße 1\n12345 Musterstadt" }
+    ],
+    "en": [
+      { "titel": "Provider", "text": "Sample Hospital\nSample Street 1\n12345 Sample City" }
+    ]
+  }
+}

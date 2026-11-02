@@ -1,0 +1,136 @@
+{
+  "categories": [
+    {
+      "name": "Mamma (incl. DCIS)",
+      "icd10": ["C50", "D05.1", "D05.7", "D05.9"]
+    },
+    {
+      "name": "Vulva",
+      "icd10": ["C51"]
+    },
+    {
+      "name": "Vagina",
+      "icd10": ["C52"]
+    },
+    {
+      "name": "Zervix",
+      "icd10": ["C53"]
+    },
+    {
+      "name": "Endometrium",
+      "icd10": ["C54.1"]
+    },
+    {
+      "name": "Ovar/BOT/STIC",
+      "icd10": ["C56", "C57", "D39.1", "D07.3"]
+    },
+    {
+      "name": "Peritoneal",
+      "icd10": ["C48"]
+    },
+    {
+      "name": "Corpus uteri, Uterus o. n. A.",
+      "icd10": ["C54.0", "C54.2", "C54.3","C54.4","C54.5","C54.6","C54.7", "C54.8", "C54.9", "C55"]
+    },
+    {
+      "name": "Kolon",
+      "icd10": ["C18"]
+    },
+    {
+      "name": "Rektum",
+      "icd10": ["C20"]
+    },
+    {
+      "name": "Pankreas",
+      "icd10": ["C25"]
+    },
+    {
+      "name": "Magen",
+      "icd10": ["C16"]
+    },
+    {
+      "name": "HCC",
+      "icd10": ["C22.0"]
+    },
+    {
+      "name": "Biliäres Karzinom",
+      "icd10": ["C22.1", "C23"]
+    },
+    {
+      "name": "Ösophagus",
+      "icd10": ["C15"]
+    },
+    {
+      "name": "Analkanal",
+      "icd10": ["C21.1", "C44.50"]
+    },
+    {
+      "name": "Malignes Melanom",
+      "icd10": ["C43"]
+    },
+    {
+      "name": "Sonstige bös. Neub. der Haut",
+      "icd10": ["C44"]
+    },
+    {
+      "name": "Kaposi-Sarkom",
+      "icd10": ["C46"]
+    },
+    {
+      "name": "Sonstige Bindegewebes und anderer Weichteilgewebe",
+      "icd10": ["C49"]
+    },
+    {
+      "name": "Periphere Nerven und autonomes Nervensystem",
+      "icd10": ["C47"]
+    },
+    {
+      "name": "Bösartige Neubildungen NOZ",
+      "icd10": ["C70", "C71", "C72", "C75.1", "C75.2", "C75.3"]
+    },
+    {
+      "name": "Neubildungen unsicheren Verhaltens NOZ",
+      "icd10": ["D42", "D43", "D44.3", "D44.4", "D44.5"]
+    },
+    {
+      "name": "Gutartige Neubildungen NOZ",
+      "icd10": ["D32", "D33", "D35.2", "D35.3", "D35.4"]
+    },
+    {
+      "name": "Kopf-Hals",
+      "icd10": ["C00", "C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09", "C10", "C11", "C12", "C13", "C14", "C30", "C31", "C32"]
+    },
+    {
+      "name": "Lunge",
+      "icd10": ["C34"]
+    },
+    {
+      "name": "Mesotheliom",
+      "icd10": ["C45.0", "C45.1", "C45.2"]
+    },
+    {
+      "name": "Prostata",
+      "icd10": ["C61"]
+    },
+    {
+      "name": "Harnblase",
+      "icd10": ["C67", "D09.0", "D41.4"]
+    },
+    {
+      "name": "Nierenzell",
+      "icd10": ["C64"]
+    },
+    {
+      "name": "Hoden",
+      "icd10": ["C62"]
+    },
+    {
+      "name": "Extragonadale Tumore",
+      "icd10": ["C38.1", "C38.2", "C38.3", "C48.0"]
+    },
+    {
+      "name": "Penis",
+      "icd10": ["C60", "D07.4"]
+    }
+  ]
+}

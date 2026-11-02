@@ -1,0 +1,9 @@
+# Addition for building from source instead of pulling the prebuilt image:
+#   docker compose -f docker-compose.yml -f docker-compose.build.yml up -d --build
+services:
+  app:
+    image: oncocurve:lokal
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_BUILD_COMMIT: ${BUILD_COMMIT:-}
