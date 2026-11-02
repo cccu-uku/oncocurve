@@ -7547,7 +7547,7 @@ __metadata:
     next-intl: "npm:^4.8.2"
     next-themes: "npm:^0.4.6"
     papaparse: "npm:^5.5.3"
-    plotly.js-cartesian-dist-min: "npm:^3.7.0"
+    plotly.js-cartesian-dist-min: "npm:^4.2.0"
     postcss: "npm:^8.5.10"
     prettier: "npm:^3.8.3"
     react: "npm:^19.2.9"
@@ -7739,10 +7739,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"plotly.js-cartesian-dist-min@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "plotly.js-cartesian-dist-min@npm:3.7.0"
-  checksum: 10c0/888d3dfd731be4a5d291d86090d502a48a50e63b4559a83e7a089ebbb3b54f17a71e5da39a4bbd3233b89832972544c3f32560974e9792b963aa8e79c8ae0bed
+"plotly.js-cartesian-dist-min@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "plotly.js-cartesian-dist-min@npm:4.2.0"
+  checksum: 10c0/339b55a86c5c6977542c5887dbaf023a154f52fb7f43bfb02eba23ed89b8dd38b514fc804176db96b0d2c1097409b5ef7b8f25e7ecc3868acf63fdf52ac5c8db
   languageName: node
   linkType: hard
 
