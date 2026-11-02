@@ -35,7 +35,7 @@
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
     "date-fns": "^4.1.0",
-    "dom-to-image-more": "^3.7.2",
+    "dom-to-image-more": "^3.11.0",
     "exceljs": "^4.4.0",
     "fast-xml-parser": "5.10.1",
     "file-saver": "^2.0.5",

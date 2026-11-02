@@ -4848,10 +4848,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dom-to-image-more@npm:^3.7.2":
-  version: 3.7.2
-  resolution: "dom-to-image-more@npm:3.7.2"
-  checksum: 10c0/918929188603dad84a5e60a03cd22ecd75b33233d33f8c260d08b957f5cb2101fecec61655835b513d4d7e88c9a29ce932ad1caa01bbbe0a36b44dc9079e70f2
+"dom-to-image-more@npm:^3.11.0":
+  version: 3.11.0
+  resolution: "dom-to-image-more@npm:3.11.0"
+  checksum: 10c0/b11f716c981b79eeec37b5c469c7d5fd58da9db4ca20e11e84d21190dc76f1aa750e456ff37c038e27179e62fb61b84e25cf03e478dbd2e7fa8a6a4e61bc8b26
   languageName: node
   linkType: hard
 
@@ -7524,7 +7524,7 @@ __metadata:
     clsx: "npm:^2.1.1"
     cmdk: "npm:^1.1.1"
     date-fns: "npm:^4.1.0"
-    dom-to-image-more: "npm:^3.7.2"
+    dom-to-image-more: "npm:^3.11.0"
     eslint: "npm:^9"
     eslint-config-next: "npm:^16.4.2"
     eslint-config-prettier: "npm:^10.1.8"
