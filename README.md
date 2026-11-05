@@ -1,5 +1,7 @@
 # ONCOcurve
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23979901.svg)](https://doi.org/10.5281/zenodo.23979901)
+
 Survival analysis for oncology cohorts, directly in the browser.
 
 ONCOcurve computes Kaplan-Meier curves, log-rank tests and Cox models from cancer registry exports, OncoBox files or simple tables. It is intended for clinical cancer registries, certified cancer centres and tumour documentation teams. It is developed at the Comprehensive Cancer Center Ulm (CCCU) of Universitätsklinikum Ulm as part of the ONCOnnect consortium.
@@ -154,7 +156,9 @@ If you use ONCOcurve or its source code in your work, please cite the accompanyi
 
 To refer to a specific version of the software, you can additionally cite it:
 
-> Stiegler V. ONCOcurve. Version 1.0.0. Universitätsklinikum Ulm, Comprehensive Cancer Center Ulm (CCCU); 2026. https://github.com/cccu-uku/oncocurve
+> Stiegler V. ONCOcurve. Version 1.0.0. Universitätsklinikum Ulm, Comprehensive Cancer Center Ulm (CCCU); 2026. doi: 10.5281/zenodo.23979902
+
+Each release is archived at Zenodo. The DOI [10.5281/zenodo.23979901](https://doi.org/10.5281/zenodo.23979901) always refers to the latest version.
 
 ```bibtex
 @unpublished{stiegler_oncocurve_2026,
@@ -170,6 +174,7 @@ To refer to a specific version of the software, you can additionally cite it:
   version   = {1.0.0},
   year      = {2026},
   publisher = {Universitätsklinikum Ulm, Comprehensive Cancer Center Ulm (CCCU)},
+  doi       = {10.5281/zenodo.23979902},
   url       = {https://github.com/cccu-uku/oncocurve},
   license   = {AGPL-3.0-only}
 }

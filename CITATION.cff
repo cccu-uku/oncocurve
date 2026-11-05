@@ -16,6 +16,14 @@ version: 1.0.0
 date-released: "2026-11-05"
 license: AGPL-3.0-only
 repository-code: "https://github.com/cccu-uku/oncocurve"
+doi: 10.5281/zenodo.23979902
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23979902
+    description: "ONCOcurve 1.0.0"
+  - type: doi
+    value: 10.5281/zenodo.23979901
+    description: "All versions (resolves to the latest)"
 keywords:
   - survival analysis
   - Kaplan-Meier
