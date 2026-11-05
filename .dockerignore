@@ -1,0 +1,19 @@
+# Versteckte Dateien und Ordner (Git, Caches, lokale Werkzeuge); .yarnrc.yml braucht der Build
+.*
+!.yarnrc.yml
+# Dokumentation im Hauptverzeichnis gehört nicht ins Image
+*.md
+node_modules
+coverage
+auswertung
+config/betreiber*.json
+!config/betreiber.beispiel.json
+# Logos der Instanz gehören nicht ins Image
+config/*.png
+config/*.svg
+config/*.jpg
+config/*.jpeg
+config/*.webp
+docs
+docker-compose.override.yml
+*.tsbuildinfo

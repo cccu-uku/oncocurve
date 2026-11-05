@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<oBDS xmlns="http://www.basisdatensatz.de/oBDS/XML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Schema_Version="3.0.1" xsi:schemaLocation="http://www.basisdatensatz.de/oBDS/XML https://basisdatensatz.de/xml/oBDS_v3.0.1.xsd">
+  <Absender Absender_ID="1" Software_ID="1" Software_Version="1">
+    <Bezeichnung>ONCOcurve Beispieldaten</Bezeichnung>
+    <Ansprechpartner>Test Absender</Ansprechpartner>
+    <Anschrift>Teststrasse 1</Anschrift>
+    <Telefon>+49 (0)69 123456</Telefon>
+    <EMail>test@example.org</EMail>
+  </Absender>
+  <Meldedatum>2025-01-01</Meldedatum>
+  <Menge_Patient>
+    <Patient Patient_ID="1">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1960-03-15</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_1">
+          <Tumorzuordnung Tumor_ID="1">
+            <Primaertumor_ICD>
+              <Code>C50.4</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2019-02-10</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T2</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N1</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IIB</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G2</Grading>
+          </Histologie>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2022-08-12</Sterbedatum>
+      </Tod>
+    </Patient>
+    <Patient Patient_ID="2">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1964-07-22</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_2">
+          <Tumorzuordnung Tumor_ID="2">
+            <Primaertumor_ICD>
+              <Code>C50.9</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2020-05-20</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T1</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IA</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G1</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-10-15</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="3">
+      <Patienten_Stammdaten>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1958-11-08</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_3">
+          <Tumorzuordnung Tumor_ID="3">
+            <Primaertumor_ICD>
+              <Code>C50.9</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2018-08-14</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T3</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N2</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M1</M>
+            <UICC_Stadium>IV</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G3</Grading>
+          </Histologie>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2021-03-05</Sterbedatum>
+      </Tod>
+    </Patient>
+    <Patient Patient_ID="4">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1970-02-25</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_4">
+          <Tumorzuordnung Tumor_ID="4">
+            <Primaertumor_ICD>
+              <Code>C50.2</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2021-01-10</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T1</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IA</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G1</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-08-20</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="5">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1956-09-04</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_5">
+          <Tumorzuordnung Tumor_ID="5">
+            <Primaertumor_ICD>
+              <Code>C50.8</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2019-06-18</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T2</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IIA</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G2</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-11-10</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="6">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1952-12-30</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_6">
+          <Tumorzuordnung Tumor_ID="6">
+            <Primaertumor_ICD>
+              <Code>C50.5</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2017-10-22</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T4</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N2</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M1</M>
+            <UICC_Stadium>IV</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G3</Grading>
+          </Histologie>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2021-05-18</Sterbedatum>
+      </Tod>
+    </Patient>
+    <Patient Patient_ID="7">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1967-04-11</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_7">
+          <Tumorzuordnung Tumor_ID="7">
+            <Primaertumor_ICD>
+              <Code>C50.4</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2020-03-15</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T2</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N1</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IIB</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G2</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-07-20</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="8">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1972-06-28</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_8">
+          <Tumorzuordnung Tumor_ID="8">
+            <Primaertumor_ICD>
+              <Code>C50.9</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2021-09-05</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T1</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IA</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G1</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-12-10</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="9">
+      <Patienten_Stammdaten>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1957-08-19</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_9">
+          <Tumorzuordnung Tumor_ID="9">
+            <Primaertumor_ICD>
+              <Code>C34.1</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2018-11-10</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T3</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N2</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IIIB</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G3</Grading>
+          </Histologie>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2020-12-15</Sterbedatum>
+      </Tod>
+    </Patient>
+    <Patient Patient_ID="10">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1963-03-14</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_10">
+          <Tumorzuordnung Tumor_ID="10">
+            <Primaertumor_ICD>
+              <Code>C34.3</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2019-07-25</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T2</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IB</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G2</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-09-10</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="11">
+      <Patienten_Stammdaten>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1950-01-06</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_11">
+          <Tumorzuordnung Tumor_ID="11">
+            <Primaertumor_ICD>
+              <Code>C34.8</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2017-04-20</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T4</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N3</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M1</M>
+            <UICC_Stadium>IV</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G3</Grading>
+          </Histologie>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2019-08-30</Sterbedatum>
+      </Tod>
+    </Patient>
+    <Patient Patient_ID="12">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1968-10-12</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_12">
+          <Tumorzuordnung Tumor_ID="12">
+            <Primaertumor_ICD>
+              <Code>C34.1</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2022-02-14</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T1</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IA</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G1</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-11-20</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="13">
+      <Patienten_Stammdaten>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1954-06-07</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_13">
+          <Tumorzuordnung Tumor_ID="13">
+            <Primaertumor_ICD>
+              <Code>C18.7</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2018-05-30</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T3</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N1</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IIIA</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G2</Grading>
+          </Histologie>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2022-01-10</Sterbedatum>
+      </Tod>
+    </Patient>
+    <Patient Patient_ID="14">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1962-09-23</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_14">
+          <Tumorzuordnung Tumor_ID="14">
+            <Primaertumor_ICD>
+              <Code>C18.2</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2020-03-18</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T2</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IIA</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G2</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2023-10-20</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="15">
+      <Patienten_Stammdaten>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1968-11-15</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_15">
+          <Tumorzuordnung Tumor_ID="15">
+            <Primaertumor_ICD>
+              <Code>C18.4</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2021-07-12</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T3</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IIB</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G2</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-12-20</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="16">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1946-03-01</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_16">
+          <Tumorzuordnung Tumor_ID="16">
+            <Primaertumor_ICD>
+              <Code>C18.7</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2016-09-08</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T4</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N2</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M1</M>
+            <UICC_Stadium>IV</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G3</Grading>
+          </Histologie>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2020-06-15</Sterbedatum>
+      </Tod>
+    </Patient>
+    <Patient Patient_ID="17">
+      <Patienten_Stammdaten>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1950-07-19</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_17">
+          <Tumorzuordnung Tumor_ID="17">
+            <Primaertumor_ICD>
+              <Code>C61</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2018-03-25</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T2</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>II</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G2</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-08-15</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="18">
+      <Patienten_Stammdaten>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1956-11-28</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_18">
+          <Tumorzuordnung Tumor_ID="18">
+            <Primaertumor_ICD>
+              <Code>C61</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2019-12-10</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T1</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>I</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G1</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-10-25</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="19">
+      <Patienten_Stammdaten>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1942-04-05</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_19">
+          <Tumorzuordnung Tumor_ID="19">
+            <Primaertumor_ICD>
+              <Code>C61</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2017-06-12</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T3</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N1</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M1</M>
+            <UICC_Stadium>IV</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G3</Grading>
+          </Histologie>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2022-03-20</Sterbedatum>
+      </Tod>
+    </Patient>
+    <Patient Patient_ID="20">
+      <Patienten_Stammdaten>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1962-02-14</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_20">
+          <Tumorzuordnung Tumor_ID="20">
+            <Primaertumor_ICD>
+              <Code>C61</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2021-04-22</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T2</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>II</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G1</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-09-15</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="21">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1958-08-20</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_21">
+          <Tumorzuordnung Tumor_ID="21">
+            <Primaertumor_ICD>
+              <Code>C20</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2019-11-15</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T2</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>I</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G2</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-07-10</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="22">
+      <Patienten_Stammdaten>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1953-05-18</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_22">
+          <Tumorzuordnung Tumor_ID="22">
+            <Primaertumor_ICD>
+              <Code>C20</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2018-02-28</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T3</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N2</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>IIIB</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G3</Grading>
+          </Histologie>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2021-09-12</Sterbedatum>
+      </Tod>
+    </Patient>
+    <Patient Patient_ID="23">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1969-01-30</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_23">
+          <Tumorzuordnung Tumor_ID="23">
+            <Primaertumor_ICD>
+              <Code>C20</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2022-01-18</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T1</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>I</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G1</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-12-05</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+    <Patient Patient_ID="24">
+      <Patienten_Stammdaten>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1948-11-09</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_24">
+          <Tumorzuordnung Tumor_ID="24">
+            <Primaertumor_ICD>
+              <Code>C83.3</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2017-08-15</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T2</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>II</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G3</Grading>
+          </Histologie>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2021-04-30</Sterbedatum>
+      </Tod>
+    </Patient>
+    <Patient Patient_ID="25">
+      <Patienten_Stammdaten>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1960-06-22</Geburtsdatum>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Meldung_ID="SYS_25">
+          <Tumorzuordnung Tumor_ID="25">
+            <Primaertumor_ICD>
+              <Code>C83.3</Code>
+              <Version>10 2021 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2020-09-08</Diagnosedatum>
+          </Tumorzuordnung>
+          <cTNM>
+            <c_p_u_Praefix_T>c</c_p_u_Praefix_T>
+            <T>T1</T>
+            <c_p_u_Praefix_N>c</c_p_u_Praefix_N>
+            <N>N0</N>
+            <c_p_u_Praefix_M>c</c_p_u_Praefix_M>
+            <M>M0</M>
+            <UICC_Stadium>I</UICC_Stadium>
+          </cTNM>
+          <Histologie>
+            <Grading>G2</Grading>
+          </Histologie>
+          <Verlauf>
+            <Verlauf_Typ>
+              <Untersuchungsdatum_Verlauf>2024-11-25</Untersuchungsdatum_Verlauf>
+            </Verlauf_Typ>
+          </Verlauf>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+  </Menge_Patient>
+</oBDS>

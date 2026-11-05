@@ -1,0 +1,81 @@
+# Start manually (workflow_dispatch) only on a tag, otherwise no version tags are created.
+name: Publish image to GHCR
+
+on:
+  push:
+    tags: ["v*.*.*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26
+      - run: npm i -g corepack@latest && corepack enable
+      - run: yarn install --immutable
+      - run: yarn test
+      - run: yarn lint
+
+  image:
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
+      - uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: meta
+        uses: docker/metadata-action@dc802804100637a589fabce1cb79ff13a1411302 # v6.2.0
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/oncocurve
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+          labels: |
+            org.opencontainers.image.title=ONCOcurve
+            org.opencontainers.image.description=Kaplan-Meier survival analysis for oncology cohorts in the browser
+            org.opencontainers.image.licenses=AGPL-3.0-only
+            org.opencontainers.image.vendor=Universitätsklinikum Ulm (Comprehensive Cancer Center Ulm, CCCU)
+      - name: Build for scan
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        with:
+          context: .
+          load: true
+          tags: oncocurve:scan
+          build-args: NEXT_PUBLIC_BUILD_COMMIT=${{ github.sha }}
+      - name: Security scan
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
+        with:
+          image-ref: oncocurve:scan
+          severity: CRITICAL,HIGH
+          ignore-unfixed: true
+          exit-code: "1"
+      - name: Build and publish
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        with:
+          context: .
+          # No arm64 for now: building it under QEMU emulation crashes with Node 26
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: NEXT_PUBLIC_BUILD_COMMIT=${{ github.sha }}
+          provenance: mode=max
+          sbom: true

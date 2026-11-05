@@ -1,0 +1,238 @@
+@import "./theme.css";
+
+/* Ohne diese Zeile fällt --font-sans in theme.css auf system-ui zurück und die
+   Anwendung sieht auf jedem Rechner anders aus. --font-inter kommt aus
+   app/layout.tsx und lädt app/fonts/InterVariable.woff2 aus dem Projekt.
+   Kein Aufruf nach aussen, weder beim Bauen noch zur Laufzeit. */
+:root {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Unsichtbare Scrollbars, Scrollen bleibt funktionsfähig */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE und alte Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+/* Karten trennen sich durch Tiefe statt durch eine dicke Kontur: ein
+   schmaler 1px-Rand fürs Auge, ein weicher, niedriger Schatten trägt die
+   optische Abgrenzung. Zwei Schichten (kurze Nahkante, weiche Streuung),
+   analog zu Tailwinds "shadow-sm"/"shadow", aber bewusst gedämpft, damit
+   ein Screenshot in Zertifizierungsberichten kein Kastendesign zeigt. */
+[data-slot="card"] {
+  border-width: 1px;
+  box-shadow:
+    0 1px 2px 0 rgb(0 0 0 / 0.04),
+    0 2px 6px -1px rgb(0 0 0 / 0.05);
+}
+
+/* Gedämpfter Fliesstext (--muted-foreground) ist auf dem Bildschirm lesbar,
+   verliert aber Kontrast, sobald ein Screenshot für den Zertifizierungs-
+   bericht verkleinert oder ausgedruckt wird. 205 20% 34% liegt bei 7,20:1
+   gegen Weiss (vorher 4,83:1) und liest sich als bewusstes Blaugrau neben
+   dem Primärton, nicht als Neutralgrau. Für das dunkle Theme neu gegen den
+   eigenen Hintergrund gerechnet: 205 20% 64% ergibt 7,88:1 gegen den
+   dunklen Seitenhintergrund (vorher 7,76:1).
+
+   Die übrigen Neutraltöne stehen im Paket auf Farbton 240 (Grau), der
+   Primärton auf 199 bis 204 (OnConnect-Blau). Beide sind blau, aber nicht
+   verwandt. Farbton auf rund 205 verschoben, Helligkeit und Sättigung
+   praktisch unverändert gelassen (nur um Bruchteile eines Prozentpunkts
+   nachjustiert, wo die Farbtonverschiebung sonst den Kontrast einer
+   Text/Flächen-Paarung unter den bisherigen Wert gedrückt hätte). Alle
+   berechneten Kontrastwerte stehen im Bericht. */
+:root {
+  --muted-foreground: 205 20% 34%;
+
+  --foreground: 205 10% 3.6%;
+  --card-foreground: 205 10% 3.6%;
+  --popover-foreground: 205 10% 3.6%;
+  --secondary: 205 4.8% 95.9%;
+  --secondary-foreground: 205 5.9% 9.8%;
+  --muted: 205 4.8% 95.9%;
+  --accent: 205 4.8% 95.9%;
+  --accent-foreground: 205 5.9% 9.8%;
+  --border: 205 5.9% 89.5%;
+  --input: 205 5.9% 89.5%;
+  --sidebar-foreground: 205 5.3% 25%;
+  --sidebar-primary: 205 5.9% 9.5%;
+  --sidebar-accent: 205 4.8% 95.9%;
+  --sidebar-accent-foreground: 205 5.9% 9.8%;
+  --sidebar-border: 205 13% 90.6%;
+}
+.dark {
+  --muted-foreground: 205 20% 64%;
+
+  /* Diese Deklarationen liegen ausserhalb jedes @layer, genau wie die
+     Vorgaben oben im :root-Block. Unlayered CSS schlägt layered CSS immer,
+     unabhängig von Selektor oder Reihenfolge: bliebe ein Wert hier
+     unerwähnt, gölte für das dunkle Theme trotz passender .dark-Klasse die
+     helle Zeile aus dem :root-Block oben, denn die stammt ebenfalls aus
+     unlayered CSS und das Paket kann mit seiner @layer-base-Regel dagegen
+     nicht mehr anschreiben. Darum stehen hier auch die Werte, die sich
+     gegenüber dem Paket gar nicht ändern (Vordergrund, Karten-/Popover-
+     Vordergrund, Sekundär-/Akzent-Vordergrund, Sidebar-Primär). */
+  --foreground: 0 0% 98%;
+  --card-foreground: 0 0% 98%;
+  --popover-foreground: 0 0% 98%;
+  --secondary-foreground: 0 0% 98%;
+  --accent-foreground: 0 0% 98%;
+  --sidebar-primary: 224.3 76.3% 48%;
+
+  --background: 205 10% 3.6%;
+  --card: 205 10% 9%;
+  --popover: 205 10% 3.6%;
+  --secondary: 205 3.7% 15.3%;
+  --muted: 205 3.7% 15.3%;
+  --accent: 205 3.7% 15.3%;
+  --border: 205 3.7% 15.3%;
+  --input: 205 3.7% 15.3%;
+  --sidebar-background: 205 5.9% 9.8%;
+  --sidebar-foreground: 205 4.8% 95.9%;
+  --sidebar-accent: 205 3.7% 15.3%;
+  --sidebar-accent-foreground: 205 4.8% 95.9%;
+  --sidebar-border: 205 3.7% 15.3%;
+}
+
+/* Typskala für die Ergebnisansicht: vier bewusste Stufen statt zufälliger
+   Framework-Grössen. Knapp gehalten, ein dichtes Instrument braucht keine
+   Marketing-Hierarchie. */
+.km-heading {
+  font-size: calc(1.5rem * var(--schrift-faktor, 1)); /* 24px */
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.km-card-title {
+  font-size: calc(1rem * var(--schrift-faktor, 1)); /* 16px */
+  line-height: 1.3;
+  font-weight: 600;
+}
+.km-label {
+  font-size: calc(0.75rem * var(--schrift-faktor, 1)); /* 12px */
+  line-height: 1.35;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-muted-foreground);
+}
+.km-data {
+  font-size: calc(1.375rem * var(--schrift-faktor, 1)); /* 22px */
+  line-height: 1.2;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Zurückhaltende Transluzenz: nur die feste Seitenleiste und Popover-
+   Flächen bekommen einen Blur-Hintergrund, nichts, das Daten trägt (Karten,
+   Plots, Tabellen bleiben deckend). Der Hintergrund bleibt fast deckend
+   (95%), der Blur ist eine leichte Tiefenandeutung, kein Glaseffekt: ein
+   Screenshot für den Zertifizierungsbericht soll nicht vom Zufall
+   abhängen, was gerade dahinterliegt. */
+[data-slot="popover-content"] {
+  background-color: hsl(var(--popover) / 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Die Hilfeseite ist die einzige Ansicht, die nichts Gemessenes zeigt: keine
+   Kurve, keine Risikotabelle, nichts, das in einen Zertifizierungsbericht
+   wandert. Nur hier ist Transluzenz unbedenklich, denn ein Screenshot dieser
+   Seite hängt an keiner Aussage. Überall sonst bleiben Flächen deckend,
+   damit ein Bild nicht davon abhängt, was zufällig dahinterliegt.
+
+   Der Farbverlauf liegt unter den Kacheln und ist der Grund, warum die
+   Glasoptik überhaupt etwas zeigt: ohne etwas dahinter wäre die Unschärfe
+   wirkungslos. */
+.hilfe-flaeche {
+  background-image:
+    radial-gradient(60rem 42rem at 6% -12%, hsl(202 84% 88% / 0.9), transparent 62%),
+    radial-gradient(52rem 38rem at 98% 2%, hsl(214 82% 90% / 0.8), transparent 64%),
+    radial-gradient(46rem 34rem at 46% 108%, hsl(194 76% 90% / 0.65), transparent 66%);
+}
+.dark .hilfe-flaeche {
+  background-image:
+    radial-gradient(60rem 42rem at 6% -12%, hsl(202 52% 20% / 0.75), transparent 62%),
+    radial-gradient(52rem 38rem at 98% 2%, hsl(214 50% 22% / 0.65), transparent 64%),
+    radial-gradient(46rem 34rem at 46% 108%, hsl(194 46% 20% / 0.55), transparent 66%);
+}
+
+/* Die Kachel selbst trägt die Unschärfe, die Kopfleiste nur noch ihren
+   Farbton darüber. So bleibt es bei einer Unschärfeschicht je Kachel statt
+   zwei. */
+.hilfe-kachel {
+  background-color: hsl(var(--card) / 0.72);
+  backdrop-filter: blur(14px) saturate(1.3);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  border-color: hsl(206 40% 70% / 0.35);
+}
+.dark .hilfe-kachel {
+  background-color: hsl(var(--card) / 0.62);
+  border-color: hsl(206 40% 70% / 0.18);
+}
+
+/* Drei Blautöne fuer die Kopfleisten, reihum vergeben, damit nie zwei
+   benachbarte Kacheln denselben tragen. Gleiche Helligkeit, nur der Farbton
+   unterscheidet sie: eine Rangfolge zwischen den Themen gibt es nicht, und
+   eine unterschiedlich helle Leiste würde eine behaupten. */
+:root {
+  --hilfe-ton-1: 196 78% 86%;
+  --hilfe-ton-2: 208 80% 88%;
+  --hilfe-ton-3: 220 72% 89%;
+}
+.dark {
+  --hilfe-ton-1: 196 48% 24%;
+  --hilfe-ton-2: 208 50% 26%;
+  --hilfe-ton-3: 220 44% 28%;
+}
+.hilfe-ton-1 {
+  background-color: hsl(var(--hilfe-ton-1) / 0.6);
+}
+.hilfe-ton-2 {
+  background-color: hsl(var(--hilfe-ton-2) / 0.6);
+}
+.hilfe-ton-3 {
+  background-color: hsl(var(--hilfe-ton-3) / 0.6);
+}
+
+/* Screenshot-Modus (Schalter in den Anzeige-Einstellungen der Ergebnisseite).
+   Abbildungen fürs Paper werden aus Screenshots gebaut und dort stark
+   verkleinert; die feine, graue Bildschirmschrift ist danach kaum lesbar.
+   Tailwind rechnet Größen, Gewichte und Farben über diese Variablen, deshalb
+   genügt es, sie im Inhaltsbereich zwischen Header und Footer neu zu setzen.
+   Graues wird so dunkel wie der Fliesstext, farbige Schrift behält ihre Farbe.
+   --schrift-faktor erreicht die wenigen Stellen mit festen Pixelgrößen. */
+[data-screenshot] .screenshot-bereich {
+  --schrift-faktor: 1.3;
+
+  --text-xs: 0.95rem;
+  --text-sm: 1.05rem;
+  --text-base: 1.15rem;
+  --text-lg: 1.3rem;
+  --text-xl: 1.45rem;
+  --text-2xl: 1.7rem;
+  --text-3xl: 2.1rem;
+
+  --font-weight-normal: 500;
+  --font-weight-medium: 600;
+  --font-weight-semibold: 700;
+  --font-weight-bold: 800;
+
+  --color-muted-foreground: hsl(var(--foreground));
+  --color-gray-400: hsl(var(--foreground));
+  --color-gray-500: hsl(var(--foreground));
+  --color-gray-600: hsl(var(--foreground));
+  --color-slate-400: hsl(var(--foreground));
+  --color-slate-500: hsl(var(--foreground));
+  --color-slate-600: hsl(var(--foreground));
+
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+}
+[data-screenshot] .screenshot-bereich .km-label {
+  font-weight: 600;
+}

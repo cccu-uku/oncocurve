@@ -1,0 +1,198 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XML-BlackBox">
+	<xs:element name="Patienten">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="InfoXML" type="InfoXML_ComplexType" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="Patient" type="Patient_ComplexType" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:anyAttribute processContents="skip"/>
+			<!--the Tag Patienten can have any added attribute and the XML file still passes validation -->
+		</xs:complexType>
+		<xs:unique name="PatientenIDMustBeUnique">
+			<xs:selector xpath="Patient/Stammdaten"/>
+			<xs:field xpath="PatientID"/>
+		</xs:unique>
+		<xs:unique name="FallNummerMustBeUnique">
+			<xs:selector xpath="Patient/Fall/Fallinfos"/>
+			<xs:field xpath="FallNummer"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="InfoXML_ComplexType">
+		<xs:sequence>
+			<xs:element name="DatumXML" type="xs:date" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="NameTudokusys" type="String_But_Do_Not_Allow_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="VersionTudokusys" type="String_But_Do_Not_Allow_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Patient_ComplexType">
+		<xs:sequence>
+			<xs:element name="Stammdaten" type="Stammdaten_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Fall" type="Fall_ComplexType" minOccurs="1" maxOccurs="2"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Fall_ComplexType">
+		<xs:sequence>
+			<xs:element name="Fallinfos" type="Fallinfos_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Diagnose" type="Diagnose_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Tumorkonferenz" type="Tumorkonferenz_ComplexType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="Operation" type="Operation_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Operationsverlauf" type="Operationsverlauf_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PostoperativeHistologieStaging" type="PostoperativeHistologieStaging_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Strahlentherapie" type="Strahlentherapie_ComplexType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="SystemischeTherapie" type="SystemischeTherapie_ComplexType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="Prozess" type="Prozess_ComplexType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="FollowUp" type="FollowUp_ComplexType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="Abschluss" type="Abschluss_ComplexType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Stammdaten_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="PatientID" type="String_But_Do_Not_Allow_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PatientLand" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="PatientPLZ" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Alter" type="Allows_Int_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Geschlecht" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Synchron" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Fallinfos_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="Zentrumsfall" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Primärtumor" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Vorerkrankungen" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="Organ" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="RegNr" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="HauptNebenStandort" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="FallNummer" type="xs:unsignedLong" minOccurs="1" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Diagnose_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="DatumDiagnose" type="Allows_Date_and_EmptyString_Type"/>
+			<xs:element name="Seitenlokalisation" type="xs:string"/>
+			<xs:element name="Diagnosesicherheit" type="xs:string"/>
+			<xs:element name="TumordiagnoseICD10" type="xs:string"/>
+			<xs:element name="Histologie" type="xs:string"/>
+			<xs:element name="praeTcp" type="xs:string"/>
+			<xs:element name="praeT" type="xs:string"/>
+			<xs:element name="praeNcp" type="xs:string"/>
+			<xs:element name="praeN" type="xs:string"/>
+			<xs:element name="praeMcp" type="xs:string"/>
+			<xs:element name="praeM" type="xs:string"/>
+			<xs:element name="praeGrading" type="xs:string"/>
+			<xs:element name="RezeptorStatus" type="xs:string"/>
+			<xs:element name="Her2Status" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Tumorkonferenz_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="TKDatum" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="TKZeitpunkt" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Operation_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="OPArt" type="xs:string"/>
+			<xs:element name="DatumBET" type="Allows_Date_and_EmptyString_Type"/>
+			<xs:element name="DatumMas" type="Allows_Date_and_EmptyString_Type"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Operationsverlauf_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="DrathmarkierungPrae" type="xs:string"/>
+			<xs:element name="DrathmarkierungIntra" type="xs:string"/>
+			<xs:element name="Komplikationen" type="xs:string"/>
+			<xs:element name="Revisionseingriff" type="xs:string"/>
+			<xs:element name="Rekonstruktion" type="xs:string"/>
+			<xs:element name="Sentinel" type="xs:string"/>
+			<xs:element name="Axilla" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="PostoperativeHistologieStaging_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="yTNM" type="xs:string"/>
+			<xs:element name="pT" type="xs:string"/>
+			<xs:element name="pN" type="xs:string"/>
+			<xs:element name="pM" type="xs:string"/>
+			<xs:element name="Grading" type="xs:string"/>
+			<xs:element name="Histologiepost" type="xs:string"/>
+			<xs:element name="PSRLokalNachAllenOPs" type="xs:string"/>
+			<xs:element name="AbstandResektionsrand" type="xs:string"/>
+			<xs:element name="Sicherheitsabstand" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Strahlentherapie_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="EmpfehlungStrahlentherapie" type="xs:string"/>
+			<xs:element name="TherapiezeitpunktStrahlentherapie" type="xs:string"/>
+			<xs:element name="DatumBeginnStrahlentherapie" type="Allows_Date_and_EmptyString_Type"/>
+			<xs:element name="DatumEndeStrahlentherapie" type="Allows_Date_and_EmptyString_Type"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="SystemischeTherapie_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="EmpfehlungTherapie" type="xs:string"/>
+			<xs:element name="TherapieArt" type="xs:string"/>
+			<xs:element name="Therapiezeitpunkt" type="xs:string"/>
+			<xs:element name="DatumBeginnTherapie" type="Allows_Date_and_EmptyString_Type"/>
+			<xs:element name="DatumEndeTherapie" type="Allows_Date_and_EmptyString_Type"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Prozess_ComplexType">
+		<xs:sequence minOccurs="1" maxOccurs="1">
+			<xs:element name="DatumStudie" type="Allows_Date_and_EmptyString_Type" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="PsychoonkologischeBetreuung" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="BeratungSozialdienst" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="MeldungKrebsregister" type="xs:string" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FollowUp_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="DatumFollowUp" type="Allows_Date_and_EmptyString_Type"/>
+			<xs:element name="Vitalstatus" type="xs:string"/>
+			<xs:element name="TumorstatusLokal" type="xs:string"/>
+			<xs:element name="LymphknotenRezidiv" type="xs:string"/>
+			<xs:element name="Fernmetastasen" type="xs:string"/>
+			<xs:element name="TumorstatusGesamt" type="xs:string"/>
+			<xs:element name="Zweittumor" type="xs:string"/>
+			<xs:element name="QuelleFollowUp" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Abschluss_ComplexType">
+		<xs:all minOccurs="1" maxOccurs="1">
+			<xs:element name="Sterbedatum" type="Allows_Date_and_EmptyString_Type"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="Allows_Int_and_EmptyString_Type">
+		<xs:union memberTypes="xs:unsignedInt">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value=""/>
+					<xs:enumeration value=" "/>
+					<xs:enumeration value="  "/>
+					<xs:enumeration value="   "/>
+					<xs:enumeration value="    "/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	<xs:simpleType name="Allows_Date_and_EmptyString_Type">
+		<xs:union memberTypes="xs:date">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value=""/>
+					<xs:enumeration value=" "/>
+					<xs:enumeration value="  "/>
+					<xs:enumeration value="   "/>
+					<xs:enumeration value="    "/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:union>
+	</xs:simpleType>
+	<xs:simpleType name="String_But_Do_Not_Allow_EmptyString_Type">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:pattern value=".*[^\s].*"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

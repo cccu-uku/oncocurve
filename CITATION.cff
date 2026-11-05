@@ -1,0 +1,59 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below."
+type: software
+title: ONCOcurve
+abstract: >-
+  Browser-based survival analysis for oncological cohorts: Kaplan-Meier
+  curves, log-rank tests and Cox regression from cancer registry exports
+  (oBDS), OncoBox files or simple tables. All data processing runs locally
+  in the browser.
+authors:
+  - family-names: Stiegler
+    given-names: Veronika
+    orcid: "https://orcid.org/0000-0002-0675-4853"
+    affiliation: "Universitätsklinikum Ulm (Comprehensive Cancer Center Ulm, CCCU)"
+version: 1.0.0
+date-released: "2026-11-05"
+license: AGPL-3.0-only
+repository-code: "https://github.com/cccu-uku/oncocurve"
+keywords:
+  - survival analysis
+  - Kaplan-Meier
+  - Cox regression
+  - log-rank test
+  - cancer registry
+  - oBDS
+  - oncology
+preferred-citation:
+  type: unpublished
+  title: "ONCOcurve: Development and Validation of a Privacy-Preserving, Browser-Based Platform for Automated Survival Analysis from Oncological Routine Data"
+  authors:
+    - family-names: Stiegler
+      given-names: Veronika
+      orcid: "https://orcid.org/0000-0002-0675-4853"
+    - family-names: Tausch
+      given-names: Eugen
+      orcid: "https://orcid.org/0000-0002-9503-1226"
+    - family-names: Neidhard
+      given-names: Christoph
+      orcid: "https://orcid.org/0009-0007-0435-3697"
+    - family-names: Götz
+      given-names: Michael
+      orcid: "https://orcid.org/0000-0003-0984-224X"
+    - family-names: Fürstberger
+      given-names: Axel
+      orcid: "https://orcid.org/0000-0001-6907-9077"
+    - family-names: Nasseh
+      given-names: Daniel
+      orcid: "https://orcid.org/0000-0002-2167-3146"
+    - family-names: Tufman
+      given-names: Amanda
+      orcid: "https://orcid.org/0000-0001-9243-9050"
+    - family-names: Janni
+      given-names: Wolfgang
+      orcid: "https://orcid.org/0000-0001-5911-2400"
+    - family-names: Stilgenbauer
+      given-names: Stephan
+      orcid: "https://orcid.org/0000-0002-6830-9296"
+  year: 2026
+  notes: "Manuscript in preparation"

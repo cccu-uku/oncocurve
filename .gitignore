@@ -1,0 +1,73 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+.turbo
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+.dev
+
+# git worktrees
+/.worktrees/
+
+# external source data (downloadable from cBioPortal, not redistributed in repo)
+data/brca_metabric_clinical_data.tsv
+data/brca_tcga_pan_can_atlas_2018_clinical_data.tsv
+
+# manuscript material and evaluations (kept local, not part of the published repo)
+auswertung/
+
+# local-only perf instrumentation, never wired into shipped code
+utils/bench.ts
+
+# OncoBox-Rohmaterial: Spezifikationstabellen und Handbücher bleiben lokal,
+# nur Musterlösungen und Prüfschemata sind versioniert
+data/OncoBoxen/
+
+# Betreiberangaben der jeweiligen Instanz (Vorlage: config/betreiber.beispiel.json)
+config/betreiber.json
+# Logos der jeweiligen Instanz (Marken gehören nicht ins Repository)
+config/*.png
+config/*.svg
+config/*.jpg
+config/*.jpeg
+config/*.webp
+# Ausnahme: Logo zur Vorlage config/betreiber.uku.json (Marke, siehe COPYRIGHT)
+!config/cccu_logo.png
+
+# Lokale Anpassungen der Instanz (Mounts, Variablen)
+docker-compose.override.yml
+
+# Wird beim Docker-Build erzeugt (scripts/third-party-licenses.mjs)
+THIRD_PARTY_LICENSES.txt
+public/THIRD_PARTY_LICENSES.txt

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<oBDS xmlns="http://www.basisdatensatz.de/oBDS/XML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Schema_Version="3.0.1" xsi:schemaLocation="http://www.basisdatensatz.de/oBDS/XML https://basisdatensatz.de/xml/oBDS_v3.0.1.xsd">
+  <Absender Absender_ID="100010" Software_ID="1" Software_Version="1.0">
+    <Bezeichnung>ONCOnnect Kaplan-Meier App</Bezeichnung>
+    <Ansprechpartner>Test Absender</Ansprechpartner>
+    <Anschrift>Teststraße 1</Anschrift>
+    <Telefon>+49 (0)123 456789</Telefon>
+    <EMail>test@onconnect.de</EMail>
+  </Absender>
+  <Meldedatum>2024-12-19</Meldedatum>
+  <Menge_Patient>
+  <!-- 10 Beispiel-Patienten, abwechselnd Event true/false -->
+      <Patient Patient_ID="1">
+      <Patienten_Stammdaten>
+        <Versichertendaten_GKV>
+          <IKNR>10000001</IKNR>
+          <GKV_Versichertennummer>T22000001</GKV_Versichertennummer>
+        </Versichertendaten_GKV>
+        <Nachname>Testfrau</Nachname>
+        <Vornamen>Anna</Vornamen>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1979-01-01</Geburtsdatum>
+        <Adresse>
+          <Strasse>Teststr.</Strasse>
+          <Hausnummer>1</Hausnummer>
+          <Land>DE</Land>
+          <PLZ>12345</PLZ>
+          <Ort>Teststadt</Ort>
+        </Adresse>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Melder_ID="100010/1" Meldung_ID="SYS_001">
+          <Meldebegruendung>I</Meldebegruendung>
+          <Eigene_Leistung>J</Eigene_Leistung>
+          <Tumorzuordnung Tumor_ID="1">
+            <Primaertumor_ICD>
+              <Code>C50.9</Code>
+              <Version>10 2020 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2018-03-12</Diagnosedatum>
+            <Seitenlokalisation>R</Seitenlokalisation>
+            <Morphologie_ICD_O>
+              <Code>8500/3</Code>
+              <Version>31</Version>
+            </Morphologie_ICD_O>
+          </Tumorzuordnung>
+          <TNM>
+            <TNM_Klassifikation>pT2N0M0</TNM_Klassifikation>
+          </TNM>
+          <UICC>IIA</UICC>
+          <Grading>G2</Grading>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+      <Patient Patient_ID="2">
+      <Patienten_Stammdaten>
+        <Versichertendaten_GKV>
+          <IKNR>10000002</IKNR>
+          <GKV_Versichertennummer>T22000002</GKV_Versichertennummer>
+        </Versichertendaten_GKV>
+        <Nachname>Testfrau</Nachname>
+        <Vornamen>Anna</Vornamen>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1972-01-01</Geburtsdatum>
+        <Adresse>
+          <Strasse>Teststr.</Strasse>
+          <Hausnummer>2</Hausnummer>
+          <Land>DE</Land>
+          <PLZ>12345</PLZ>
+          <Ort>Teststadt</Ort>
+        </Adresse>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Melder_ID="100010/2" Meldung_ID="SYS_002">
+          <Meldebegruendung>I</Meldebegruendung>
+          <Eigene_Leistung>J</Eigene_Leistung>
+          <Tumorzuordnung Tumor_ID="2">
+            <Primaertumor_ICD>
+              <Code>C50.9</Code>
+              <Version>10 2020 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2017-07-01</Diagnosedatum>
+            <Seitenlokalisation>R</Seitenlokalisation>
+            <Morphologie_ICD_O>
+              <Code>8500/3</Code>
+              <Version>31</Version>
+            </Morphologie_ICD_O>
+          </Tumorzuordnung>
+          <TNM>
+            <TNM_Klassifikation>pT1cN1M0</TNM_Klassifikation>
+          </TNM>
+          <UICC>IIB</UICC>
+          <Grading>G3</Grading>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2017-07-01</Sterbedatum>
+      </Tod>
+    </Patient>
+      <Patient Patient_ID="3">
+      <Patienten_Stammdaten>
+        <Versichertendaten_GKV>
+          <IKNR>10000003</IKNR>
+          <GKV_Versichertennummer>T22000003</GKV_Versichertennummer>
+        </Versichertendaten_GKV>
+        <Nachname>Testfrau</Nachname>
+        <Vornamen>Anna</Vornamen>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1986-01-01</Geburtsdatum>
+        <Adresse>
+          <Strasse>Teststr.</Strasse>
+          <Hausnummer>3</Hausnummer>
+          <Land>DE</Land>
+          <PLZ>12345</PLZ>
+          <Ort>Teststadt</Ort>
+        </Adresse>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Melder_ID="100010/3" Meldung_ID="SYS_003">
+          <Meldebegruendung>I</Meldebegruendung>
+          <Eigene_Leistung>J</Eigene_Leistung>
+          <Tumorzuordnung Tumor_ID="3">
+            <Primaertumor_ICD>
+              <Code>C50.9</Code>
+              <Version>10 2020 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2020-01-15</Diagnosedatum>
+            <Seitenlokalisation>R</Seitenlokalisation>
+            <Morphologie_ICD_O>
+              <Code>8500/3</Code>
+              <Version>31</Version>
+            </Morphologie_ICD_O>
+          </Tumorzuordnung>
+          <TNM>
+            <TNM_Klassifikation>pT1bN0M0</TNM_Klassifikation>
+          </TNM>
+          <UICC>IA</UICC>
+          <Grading>G1</Grading>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+      <Patient Patient_ID="4">
+      <Patienten_Stammdaten>
+        <Versichertendaten_GKV>
+          <IKNR>10000004</IKNR>
+          <GKV_Versichertennummer>T22000004</GKV_Versichertennummer>
+        </Versichertendaten_GKV>
+        <Nachname>Testfrau</Nachname>
+        <Vornamen>Anna</Vornamen>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1963-01-01</Geburtsdatum>
+        <Adresse>
+          <Strasse>Teststr.</Strasse>
+          <Hausnummer>4</Hausnummer>
+          <Land>DE</Land>
+          <PLZ>12345</PLZ>
+          <Ort>Teststadt</Ort>
+        </Adresse>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Melder_ID="100010/4" Meldung_ID="SYS_004">
+          <Meldebegruendung>I</Meldebegruendung>
+          <Eigene_Leistung>J</Eigene_Leistung>
+          <Tumorzuordnung Tumor_ID="4">
+            <Primaertumor_ICD>
+              <Code>C50.9</Code>
+              <Version>10 2020 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2015-11-23</Diagnosedatum>
+            <Seitenlokalisation>R</Seitenlokalisation>
+            <Morphologie_ICD_O>
+              <Code>8500/3</Code>
+              <Version>31</Version>
+            </Morphologie_ICD_O>
+          </Tumorzuordnung>
+          <TNM>
+            <TNM_Klassifikation>pT2N2M0</TNM_Klassifikation>
+          </TNM>
+          <UICC>IIIA</UICC>
+          <Grading>G2</Grading>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2015-11-23</Sterbedatum>
+      </Tod>
+    </Patient>
+      <Patient Patient_ID="5">
+      <Patienten_Stammdaten>
+        <Versichertendaten_GKV>
+          <IKNR>10000005</IKNR>
+          <GKV_Versichertennummer>T22000005</GKV_Versichertennummer>
+        </Versichertendaten_GKV>
+        <Nachname>Testfrau</Nachname>
+        <Vornamen>Anna</Vornamen>
+        <Geschlecht>W</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1969-01-01</Geburtsdatum>
+        <Adresse>
+          <Strasse>Teststr.</Strasse>
+          <Hausnummer>5</Hausnummer>
+          <Land>DE</Land>
+          <PLZ>12345</PLZ>
+          <Ort>Teststadt</Ort>
+        </Adresse>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Melder_ID="100010/5" Meldung_ID="SYS_005">
+          <Meldebegruendung>I</Meldebegruendung>
+          <Eigene_Leistung>J</Eigene_Leistung>
+          <Tumorzuordnung Tumor_ID="5">
+            <Primaertumor_ICD>
+              <Code>C50.9</Code>
+              <Version>10 2020 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2016-05-10</Diagnosedatum>
+            <Seitenlokalisation>R</Seitenlokalisation>
+            <Morphologie_ICD_O>
+              <Code>8500/3</Code>
+              <Version>31</Version>
+            </Morphologie_ICD_O>
+          </Tumorzuordnung>
+          <TNM>
+            <TNM_Klassifikation>pT2N1M0</TNM_Klassifikation>
+          </TNM>
+          <UICC>IIB</UICC>
+          <Grading>G2</Grading>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+      <Patient Patient_ID="6">
+      <Patienten_Stammdaten>
+        <Versichertendaten_GKV>
+          <IKNR>10000006</IKNR>
+          <GKV_Versichertennummer>T22000006</GKV_Versichertennummer>
+        </Versichertendaten_GKV>
+        <Nachname>Testmann</Nachname>
+        <Vornamen>Bernd</Vornamen>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1956-01-01</Geburtsdatum>
+        <Adresse>
+          <Strasse>Teststr.</Strasse>
+          <Hausnummer>6</Hausnummer>
+          <Land>DE</Land>
+          <PLZ>12345</PLZ>
+          <Ort>Teststadt</Ort>
+        </Adresse>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Melder_ID="100010/6" Meldung_ID="SYS_006">
+          <Meldebegruendung>I</Meldebegruendung>
+          <Eigene_Leistung>J</Eigene_Leistung>
+          <Tumorzuordnung Tumor_ID="6">
+            <Primaertumor_ICD>
+              <Code>C34.9</Code>
+              <Version>10 2020 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2016-06-20</Diagnosedatum>
+            <Seitenlokalisation>R</Seitenlokalisation>
+            <Morphologie_ICD_O>
+              <Code>8000/3</Code>
+              <Version>31</Version>
+            </Morphologie_ICD_O>
+          </Tumorzuordnung>
+          <TNM>
+            <TNM_Klassifikation>pT2aN1M0</TNM_Klassifikation>
+          </TNM>
+          <UICC>IIB</UICC>
+          <Grading>G3</Grading>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2016-06-20</Sterbedatum>
+      </Tod>
+    </Patient>
+      <Patient Patient_ID="7">
+      <Patienten_Stammdaten>
+        <Versichertendaten_GKV>
+          <IKNR>10000007</IKNR>
+          <GKV_Versichertennummer>T22000007</GKV_Versichertennummer>
+        </Versichertendaten_GKV>
+        <Nachname>Testmann</Nachname>
+        <Vornamen>Bernd</Vornamen>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1952-01-01</Geburtsdatum>
+        <Adresse>
+          <Strasse>Teststr.</Strasse>
+          <Hausnummer>7</Hausnummer>
+          <Land>DE</Land>
+          <PLZ>12345</PLZ>
+          <Ort>Teststadt</Ort>
+        </Adresse>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Melder_ID="100010/7" Meldung_ID="SYS_007">
+          <Meldebegruendung>I</Meldebegruendung>
+          <Eigene_Leistung>J</Eigene_Leistung>
+          <Tumorzuordnung Tumor_ID="7">
+            <Primaertumor_ICD>
+              <Code>C34.9</Code>
+              <Version>10 2020 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2015-03-11</Diagnosedatum>
+            <Seitenlokalisation>R</Seitenlokalisation>
+            <Morphologie_ICD_O>
+              <Code>8000/3</Code>
+              <Version>31</Version>
+            </Morphologie_ICD_O>
+          </Tumorzuordnung>
+          <TNM>
+            <TNM_Klassifikation>pT1bN0M0</TNM_Klassifikation>
+          </TNM>
+          <UICC>IA</UICC>
+          <Grading>G2</Grading>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+      <Patient Patient_ID="8">
+      <Patienten_Stammdaten>
+        <Versichertendaten_GKV>
+          <IKNR>10000008</IKNR>
+          <GKV_Versichertennummer>T22000008</GKV_Versichertennummer>
+        </Versichertendaten_GKV>
+        <Nachname>Testmann</Nachname>
+        <Vornamen>Bernd</Vornamen>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1949-01-01</Geburtsdatum>
+        <Adresse>
+          <Strasse>Teststr.</Strasse>
+          <Hausnummer>8</Hausnummer>
+          <Land>DE</Land>
+          <PLZ>12345</PLZ>
+          <Ort>Teststadt</Ort>
+        </Adresse>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Melder_ID="100010/8" Meldung_ID="SYS_008">
+          <Meldebegruendung>I</Meldebegruendung>
+          <Eigene_Leistung>J</Eigene_Leistung>
+          <Tumorzuordnung Tumor_ID="8">
+            <Primaertumor_ICD>
+              <Code>C34.9</Code>
+              <Version>10 2020 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2014-10-02</Diagnosedatum>
+            <Seitenlokalisation>R</Seitenlokalisation>
+            <Morphologie_ICD_O>
+              <Code>8000/3</Code>
+              <Version>31</Version>
+            </Morphologie_ICD_O>
+          </Tumorzuordnung>
+          <TNM>
+            <TNM_Klassifikation>pT3N2M0</TNM_Klassifikation>
+          </TNM>
+          <UICC>IIIB</UICC>
+          <Grading>G3</Grading>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2014-10-02</Sterbedatum>
+      </Tod>
+    </Patient>
+      <Patient Patient_ID="9">
+      <Patienten_Stammdaten>
+        <Versichertendaten_GKV>
+          <IKNR>10000009</IKNR>
+          <GKV_Versichertennummer>T22000009</GKV_Versichertennummer>
+        </Versichertendaten_GKV>
+        <Nachname>Testmann</Nachname>
+        <Vornamen>Bernd</Vornamen>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1959-01-01</Geburtsdatum>
+        <Adresse>
+          <Strasse>Teststr.</Strasse>
+          <Hausnummer>9</Hausnummer>
+          <Land>DE</Land>
+          <PLZ>12345</PLZ>
+          <Ort>Teststadt</Ort>
+        </Adresse>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Melder_ID="100010/9" Meldung_ID="SYS_009">
+          <Meldebegruendung>I</Meldebegruendung>
+          <Eigene_Leistung>J</Eigene_Leistung>
+          <Tumorzuordnung Tumor_ID="9">
+            <Primaertumor_ICD>
+              <Code>C34.9</Code>
+              <Version>10 2020 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2017-12-19</Diagnosedatum>
+            <Seitenlokalisation>R</Seitenlokalisation>
+            <Morphologie_ICD_O>
+              <Code>8000/3</Code>
+              <Version>31</Version>
+            </Morphologie_ICD_O>
+          </Tumorzuordnung>
+          <TNM>
+            <TNM_Klassifikation>pT2bN1M0</TNM_Klassifikation>
+          </TNM>
+          <UICC>IIB</UICC>
+          <Grading>G2</Grading>
+        </Meldung>
+      </Menge_Meldung>
+    </Patient>
+      <Patient Patient_ID="10">
+      <Patienten_Stammdaten>
+        <Versichertendaten_GKV>
+          <IKNR>10000010</IKNR>
+          <GKV_Versichertennummer>T22000010</GKV_Versichertennummer>
+        </Versichertendaten_GKV>
+        <Nachname>Testmann</Nachname>
+        <Vornamen>Bernd</Vornamen>
+        <Geschlecht>M</Geschlecht>
+        <Geburtsdatum Datumsgenauigkeit="E">1954-01-01</Geburtsdatum>
+        <Adresse>
+          <Strasse>Teststr.</Strasse>
+          <Hausnummer>10</Hausnummer>
+          <Land>DE</Land>
+          <PLZ>12345</PLZ>
+          <Ort>Teststadt</Ort>
+        </Adresse>
+      </Patienten_Stammdaten>
+      <Menge_Meldung>
+        <Meldung Melder_ID="100010/10" Meldung_ID="SYS_010">
+          <Meldebegruendung>I</Meldebegruendung>
+          <Eigene_Leistung>J</Eigene_Leistung>
+          <Tumorzuordnung Tumor_ID="10">
+            <Primaertumor_ICD>
+              <Code>C34.9</Code>
+              <Version>10 2020 GM</Version>
+            </Primaertumor_ICD>
+            <Diagnosedatum Datumsgenauigkeit="E">2013-08-25</Diagnosedatum>
+            <Seitenlokalisation>R</Seitenlokalisation>
+            <Morphologie_ICD_O>
+              <Code>8000/3</Code>
+              <Version>31</Version>
+            </Morphologie_ICD_O>
+          </Tumorzuordnung>
+          <TNM>
+            <TNM_Klassifikation>pT4N2M1</TNM_Klassifikation>
+          </TNM>
+          <UICC>IV</UICC>
+          <Grading>G4</Grading>
+        </Meldung>
+      </Menge_Meldung>
+      <Tod>
+        <Sterbedatum>2013-08-25</Sterbedatum>
+      </Tod>
+    </Patient>
+  <!-- ... analog für alle weiteren Patienten ... -->
+</Menge_Patient>
+</oBDS> 

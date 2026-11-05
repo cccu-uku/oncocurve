@@ -1,0 +1,1523 @@
+{
+  "app": {
+    "title": "ONCOcurve",
+    "description": "Kaplan-Meier Überlebensanalyse"
+  },
+  "Header": {
+    "brandName": "ONCOnnect",
+    "appName": "ONCOcurve",
+    "logoAlt": "ONCOcurve Logo",
+    "help": "Hilfe",
+    "backToMain": "Zurück zur Hauptseite (Upload)"
+  },
+  "LanguageSwitcher": {
+    "switchLanguage": "Sprache wechseln"
+  },
+  "LocaleSwitcher": {
+    "language": {
+      "de": "Deutsch",
+      "en": "Englisch"
+    },
+    "switchLanguage": "Sprache wechseln"
+  },
+  "PlotDisplay": {
+    "title": "Plot-Darstellung",
+    "medianLines": "Median-Linien",
+    "confidenceIntervals": "Konfidenzbänder",
+    "legendCounts": "N + Events in Legende",
+    "pValue": "P-Wert im Plot",
+    "landmarks": "Landmark-Raten (1/3/5 Jahre)",
+    "medianFollowUp": "Reverse-KM-Nachbeobachtung",
+    "pairwiseComparisons": "Paarvergleiche (post hoc)",
+    "zeroEventWarningToggle": "Warnhinweis zu zensierten Gruppen anzeigen",
+    "xAxisInDays": "x-Achse in Tagen (statt Monate)",
+    "fiveYearTicks": "Achsenmarken alle fünf Jahre",
+    "screenshotMode": "Screenshot-Modus (große Schrift)",
+    "logRankMethod": "Log-Rank-Variante",
+    "logRankMethods": {
+      "logRank": "Standard (Mantel-Haenszel)",
+      "wilcoxon": "Wilcoxon (Gehan-Breslow)",
+      "petoPeto": "Peto-Peto",
+      "taroneWare": "Tarone-Ware"
+    },
+    "palette": "Farbskala der Kurven",
+    "palettes": {
+      "standard": "Standard (gedämpft)",
+      "vibrant": "Bunt / Kräftig",
+      "monoPurple": "Monochrom Lila",
+      "cvdSafe": "Farbenblind-sicher",
+      "grayscale": "Graustufen + Linienstile"
+    }
+  },
+  "ThemeToggle": {
+    "switchToDark": "Zu dunklem Theme wechseln",
+    "switchToLight": "Zu hellem Theme wechseln",
+    "toggleTheme": "Theme umschalten"
+  },
+  "Footer": {
+    "imprint": "Impressum",
+    "privacy": "Datenschutz"
+  },
+  "Datenschutz": {
+    "title": "Datenschutzerklärung",
+    "intro": "Der Schutz Ihrer Daten hat für ONCOcurve höchste Priorität. Diese Erklärung beschreibt, wie die Anwendung mit Daten umgeht.",
+    "localTitle": "Verarbeitung ausschließlich lokal",
+    "localBody": "ONCOcurve verarbeitet alle hochgeladenen Dateien (oBDS-XML, CSV, Excel) ausschließlich lokal in Ihrem Browser. Sämtliche Berechnungen (Kaplan-Meier, Log-Rank, Cox-Regression) laufen auf Ihrem Gerät. Es werden keine Patienten- oder Falldaten an einen Server oder an Dritte übertragen.",
+    "noTransferTitle": "Keine Datenübertragung",
+    "noTransferBody": "Die Anwendung sendet keine hochgeladenen Daten ins Internet. Es finden keine Uploads, keine externen API-Aufrufe und keine Übermittlung an Dritte statt.",
+    "storageTitle": "Lokale Speicherung",
+    "storageBody": "Einstellungen und Auswahl (z. B. Plot-Optionen, ausgeschlossene Fälle) werden ausschließlich im Sitzungsspeicher (sessionStorage) Ihres Browsers gehalten und beim Schließen des Tabs gelöscht. Es werden keine Cookies zu Tracking-Zwecken gesetzt.",
+    "trackingTitle": "Kein Tracking",
+    "trackingBody": "ONCOcurve verwendet keine Analyse- oder Tracking-Dienste (kein Google Analytics, Matomo o. Ä.) und bindet keine externen Schriftarten oder Skripte ein, die Ihre IP-Adresse an Dritte übertragen könnten.",
+    "hostingTitle": "Bereitstellung",
+    "hostingBody": "Die Anwendung wird über eine verschlüsselte HTTPS-Verbindung ausgeliefert. Da die Verarbeitung ausschließlich im Browser erfolgt, erhält der Server keine Patientendaten.",
+    "responsibleTitle": "Verantwortlicher",
+    "responsibleBody": "Verantwortlich für den Betrieb ist die im Impressum genannte Stelle. Bei Fragen zum Datenschutz wenden Sie sich bitte an die dort angegebenen Kontaktdaten.",
+    "rightsTitle": "Ihre Rechte",
+    "rightsBody": "Da ONCOcurve keine personenbezogenen Daten an den Betreiber übermittelt oder dort speichert, findet insoweit keine Verarbeitung durch den Betreiber statt. Für die von Ihnen lokal verarbeiteten Daten bleibt Ihre Einrichtung verantwortlich; Betroffenenrechte (Art. 15-21 DSGVO) richten sich an die datenverarbeitende Stelle.",
+    "purposeTitle": "Zweckbestimmung & Haftungsausschluss",
+    "purposeBody": "ONCOcurve dient der aggregierten, retrospektiven Überlebensstatistik auf Kohortenebene (z. B. für klinische Krebsregister und Forschung). Es ist nicht dazu bestimmt, Diagnose-, Prognose- oder Behandlungsentscheidungen für einzelne Patienten zu treffen oder zu unterstützen, und ist kein Medizinprodukt im Sinne der Verordnungen (EU) 2017/745 (MDR) bzw. 2017/746 (IVDR)."
+  },
+  "Tour": {
+    "start": "Tour starten",
+    "title": "Geführte Tour",
+    "back": "Zurück",
+    "next": "Weiter",
+    "finish": "Fertig",
+    "close": "Schließen",
+    "chooser": {
+      "quick": {
+        "label": "Schnelltour",
+        "sub": "Die Kernschritte in etwa einer Minute."
+      },
+      "full": {
+        "label": "Ausführliche Tour",
+        "sub": "Alle Funktionen Schritt für Schritt."
+      }
+    },
+    "steps": {
+      "upload": {
+        "title": "Datei hochladen",
+        "body": "Hier starten Sie: Ziehen Sie Ihre Datei (oBDS- oder OncoBox-XML, CSV, Text oder Excel) in diesen Bereich oder klicken Sie zur Auswahl. Jede Berechnung läuft lokal in Ihrem Browser."
+      },
+      "testdata": {
+        "title": "Beispieldatensätze",
+        "body": "Hier finden Sie eine Reihe an Testdatensätzen (z. B. METABRIC, TCGA), falls Sie keine eigenen Daten zur Hand haben, jeweils mit Beschreibung und Download. Mit „Weiter“ laden Sie METABRIC und gelangen zur Auswertung."
+      },
+      "anomalies": {
+        "title": "Datenqualität",
+        "body": "Erkannte Auffälligkeiten (z. B. fehlende oder unplausible Werte, Ausreißer) werden hier gebündelt. Sie können einzelne Patienten oder ganze Klassen von der Auswertung ausschließen."
+      },
+      "quickstartLoad": {
+        "title": "Daten laden",
+        "body": "Hier laden Sie eigene Daten oder wählen einen Testdatensatz. Mit „Weiter\" laden Sie METABRIC und gelangen direkt zur Auswertung."
+      },
+      "quickExport": {
+        "title": "Ergebnis als PDF",
+        "body": "So nehmen Sie Ihr Ergebnis als PDF mit. Mehr Funktionen finden Sie in der Hilfe, oder starten Sie die ausführliche Tour."
+      },
+      "strat": {
+        "title": "Stratifizieren",
+        "body": "In der linken Leiste wählen Sie die Stratifizierungsvariable. Für die Tour ist die Kohorte nach Subtyp (PAM50) aufgeteilt; pro Gruppe entsteht eine eigene Kurve, Log-Rank und Cox laufen automatisch."
+      },
+      "plot": {
+        "title": "Plot-Darstellung",
+        "body": "Median-Linien, Konfidenzbänder, p-Wert und Landmark-Tabelle blenden Sie hier ein und aus, und Sie wählen die Log-Rank-Variante."
+      },
+      "filters": {
+        "title": "Filter",
+        "body": "Hier schränken Sie die Kohorte ein, etwa nach Geschlecht, Alter, ICD-10, Stadium oder Diagnosejahr. Aktive Filter werden im Ergebnis angezeigt und im PDF-Report, im Excel-Export und in der exportierten Kurve festgehalten."
+      },
+      "chart": {
+        "title": "Kaplan-Meier-Kurve",
+        "body": "Die zentrale Überlebenskurve, darunter die Patienten unter Risiko. In der Legende können Sie einzelne Gruppen per Klick ausblenden, eine Gruppe ist hier zur Demonstration bereits ausgeblendet."
+      },
+      "cohort": {
+        "title": "Kohorte im Überblick",
+        "body": "Kennzahlen der Kohorte und der Anteil jeder Gruppe an der Kohorte als Balken."
+      },
+      "table": {
+        "title": "Patiententabelle",
+        "body": "Die durchsuchbare und sortierbare Patiententabelle unter dem Plot, ebenfalls exportierbar."
+      },
+      "cox": {
+        "title": "Cox-Regression",
+        "body": "Hazard Ratios je Gruppe mit Forest-Plot und Tabelle. Referenzgruppe und Tie-Methode (Efron oder Breslow) sind wählbar."
+      },
+      "figures": {
+        "title": "Grafiken exportieren",
+        "body": "Sichern Sie die Kurve als PNG oder SVG, oder exportieren Sie die zugrunde liegenden Daten als JSON."
+      },
+      "export": {
+        "title": "PDF-Report",
+        "body": "Erstellt einen vollständigen Report der gesamten Analyse, wahlweise mit Patiententabelle, ohne Patientendaten oder pseudonymisiert."
+      },
+      "lang": {
+        "title": "Sprache",
+        "body": "Hier wechseln Sie jederzeit zwischen Deutsch und Englisch."
+      },
+      "theme": {
+        "title": "Hell und Dunkel",
+        "body": "Hier schalten Sie zwischen hellem und dunklem Design um."
+      },
+      "helpicon": {
+        "title": "Hilfe",
+        "body": "Über dieses Fragezeichen gelangen Sie jederzeit zur Hilfeseite. Mit „Weiter“ gelangen Sie dorthin."
+      },
+      "help": {
+        "title": "Hilfeseite",
+        "body": "Hier ist jede Funktion ausführlich erklärt. Die Tour können Sie jederzeit über „Tour starten“ auf der Startseite erneut aufrufen. Viel Erfolg mit Ihren Analysen."
+      }
+    }
+  },
+  "ComponentsDemo": {
+    "title": "Komponenten",
+    "intro": "Diese Seite zeigt ONCOnnect UI-Komponenten.",
+    "introSuffix": "Nutzen Sie sie als Referenz für Stil und Verhalten.",
+    "docsLink": "Dokumentation öffnen",
+    "accordion": {
+      "title": "Akkordeon",
+      "items": {
+        "accessible": {
+          "question": "Barrierefrei?",
+          "answer": "Ja, Tastatursteuerung und ARIA sind enthalten."
+        },
+        "animated": {
+          "question": "Animierte Übergänge?",
+          "answer": "Sanfte Animationen sind integriert."
+        },
+        "styled": {
+          "question": "Individuelles Styling?",
+          "answer": "Verwenden Sie Utility-Klassen für Ihr Theme."
+        }
+      }
+    },
+    "badges": {
+      "title": "Badges",
+      "variants": {
+        "default": "Standard",
+        "secondary": "Sekundär",
+        "destructive": "Destruktiv",
+        "outline": "Outline"
+      }
+    },
+    "buttons": {
+      "title": "Buttons",
+      "variants": {
+        "default": "Standard",
+        "secondary": "Sekundär",
+        "destructive": "Destruktiv",
+        "outline": "Outline",
+        "ghost": "Ghost",
+        "link": "Link"
+      },
+      "sizes": {
+        "normal": "Normal",
+        "small": "Klein",
+        "large": "Groß"
+      },
+      "states": {
+        "disabled": "Deaktiviert",
+        "outlineDisabled": "Outline deaktiviert"
+      }
+    },
+    "cards": {
+      "title": "Cards",
+      "nested": {
+        "title": "Verschachtelte Card",
+        "body": "Cards können verschachtelt werden."
+      }
+    },
+    "dialog": {
+      "title": "Dialog",
+      "open": "Dialog öffnen",
+      "header": {
+        "title": "Profil erstellen",
+        "description": "Nehmen Sie hier Änderungen vor und speichern Sie sie."
+      },
+      "form": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Name eingeben"
+        }
+      },
+      "actions": {
+        "cancel": "Abbrechen",
+        "save": "Speichern"
+      }
+    },
+    "popover": {
+      "title": "Popover",
+      "open": "Popover öffnen",
+      "settings": {
+        "title": "Abmessungen",
+        "body": "Breite und Maximalbreite anpassen."
+      },
+      "form": {
+        "width": {
+          "label": "Breite",
+          "value": "320px"
+        },
+        "maxWidth": {
+          "label": "Max. Breite",
+          "value": "480px"
+        }
+      }
+    },
+    "select": {
+      "title": "Auswahl",
+      "label": "Projekt",
+      "placeholder": "Projekt auswählen",
+      "options": {
+        "option1": "Alpha",
+        "option2": "Beta",
+        "option3": "Gamma"
+      }
+    },
+    "sheet": {
+      "title": "Sheet",
+      "open": "Sheet öffnen",
+      "header": {
+        "title": "Profil bearbeiten",
+        "description": "Profilinformationen aktualisieren."
+      },
+      "form": {
+        "name": {
+          "label": "Name",
+          "value": "Jane Doe"
+        },
+        "username": {
+          "label": "Benutzername",
+          "value": "janedoe"
+        }
+      },
+      "actions": {
+        "save": " Änderungen speichern"
+      }
+    },
+    "demo": {
+      "title": "Formular",
+      "name": {
+        "label": "Name",
+        "placeholder": "Ihr Name"
+      },
+      "role": {
+        "label": "Rolle",
+        "placeholder": "Rolle auswählen",
+        "options": {
+          "designer": "Designer",
+          "developer": "Entwickler",
+          "manager": "Manager"
+        }
+      },
+      "actions": {
+        "save": "Speichern",
+        "cancel": "Abbrechen"
+      }
+    },
+    "formControls": {
+      "title": "Formularelemente",
+      "input": {
+        "label": "Input",
+        "placeholder": "Text eingeben"
+      },
+      "textarea": {
+        "label": "Textarea",
+        "placeholder": "Notiz schreiben"
+      }
+    },
+    "tooltip": {
+      "title": "Tooltips",
+      "examples": {
+        "hover": "Hover mich",
+        "click": "Klick mich",
+        "bottom": "Unten",
+        "message": "Hilfreicher Kontext"
+      }
+    }
+  },
+  "LandmarkTable": {
+    "title": "Landmark-Überlebensraten",
+    "titleIncidence": "Landmark-Inzidenzraten",
+    "stratum": "Stratum",
+    "oneYear": "1 Jahr",
+    "threeYear": "3 Jahre",
+    "fiveYear": "5 Jahre",
+    "hint": "Werte als Survival % (95% CI). „-\" wenn der Zeitpunkt jenseits der maximalen Beobachtungszeit liegt.",
+    "hintIncidence": "Werte als kumulative Inzidenz % (95% CI). „-\" wenn der Zeitpunkt jenseits der maximalen Beobachtungszeit liegt."
+  },
+  "KaplanMeier": {
+    "title": "Überlebensanalysen direkt im Browser",
+    "description": "Führen Sie automatisierte Kaplan-Meier-Überlebensanalysen und Cox-Regression direkt aus lokalen oBDS-XML-, Excel- oder CSV-Dateien durch.",
+    "upload": {
+      "title": "Upload",
+      "xmlTitle": "XML-Upload",
+      "csvTitle": "CSV-Upload",
+      "analyzeXml": "XML analysieren",
+      "analyzeCsv": "CSV analysieren",
+      "sampleXmlPrompt": "Keine XML-Datei? Laden Sie hier die Beispieldatei herunter. ",
+      "sampleXmlDownload": "Beispiel-XML herunterladen",
+      "sampleCsvPrompt": "Keine CSV-Datei? Laden Sie hier die Beispieldatei herunter.",
+      "sampleCsvDownload": "Beispiel-CSV herunterladen",
+      "sampleTxtPrompt": "Keine TXT-Datei? Laden Sie hier die Beispieldatei herunter.",
+      "sampleTxtDownload": "Beispiel-TXT herunterladen",
+      "csvDescription": "Ziehen Sie eine CSV-Datei hierher oder klicken Sie zum Auswählen",
+      "clientSideNotice": "Die Datei wird lokal im Browser verarbeitet. Es werden keine Daten auf einen Server geladen. \n\nAlle Daten bleiben auf Ihrem PC und werden lokal im Browser verarbeitet."
+    },
+    "uploadDescription": "Ziehen Sie eine XML-, CSV- oder TXT-Datei hierher oder klicken Sie zum Auswählen",
+    "fileSelected": "Datei ausgewählt",
+    "loading": "Lädt...",
+    "overallSurvival": "Gesamtüberleben",
+    "survivalCurve": "Überlebenskurve",
+    "cumulativeIncidenceCurve": "Kumulative-Inzidenz-Kurve",
+    "timeAxis": "Zeit (Monate)",
+    "survivalProbability": "Überlebenswahrscheinlichkeit",
+    "gender": "Geschlecht",
+    "ageGroup": "Altersgruppe",
+    "tumorType": "Tumortyp",
+    "tumorCategory": "Tumor-Kategorie",
+    "tumorMainCategory": "Tumor-Hauptkategorie",
+    "tumorSubCategory": "Tumor-Subkategorie",
+    "staging": "UICC-Stadium",
+    "grading": "Grading",
+    "diagnosisYear": "Diagnosejahr",
+    "spreadCategory": "Ausbreitungskategorie",
+    "entityStaging": "Entitätenspezifisches Staging",
+    "nCategory": "N-Kategorie",
+    "mCategory": "M-Kategorie",
+    "tCategoryOneDigit": "T-Kategorie (1-stellig)",
+    "tCategoryTwoDigit": "T-Kategorie (2-stellig)",
+    "tClinical": "T-Kategorie (klinisch)",
+    "tClinicalOneDigit": "T-Kategorie (klinisch, 1-stellig)",
+    "tClinicalTwoDigit": "T-Kategorie (klinisch, 2-stellig)",
+    "tPathological": "T-Kategorie (pathologisch)",
+    "tPathologicalOneDigit": "T-Kategorie (pathologisch, 1-stellig)",
+    "tPathologicalTwoDigit": "T-Kategorie (pathologisch, 2-stellig)",
+    "diseaseFreeSurvival": "Krankheitsfreies Überleben",
+    "none": "-",
+    "male": "Männlich",
+    "female": "Weiblich",
+    "genderUnknown": "Unbekannt",
+    "ageGroupChild": "Kind",
+    "ageGroupAdult": "Erwachsen",
+    "ageGroupSenior": "Senior",
+    "errors": {
+      "invalidXml": "Bitte eine gültige XML-Datei auswählen.",
+      "invalidCsv": "Bitte eine gültige CSV-Datei auswählen.",
+      "csvTimeout": "CSV-Parsing hat zu lange gedauert.",
+      "csvParsing": "CSV-Parsing fehlgeschlagen: {errors}",
+      "csvNoValidData": "Keine gültigen Daten in der CSV-Datei gefunden.",
+      "csvProcessing": "CSV-Verarbeitung fehlgeschlagen: {message}",
+      "xlsxParsing": "Fehler beim Parsen der Excel-Datei: {errors}",
+      "xlsxNoValidData": "Die Excel-Datei enthält keine gültigen Patientendaten",
+      "xlsxProcessing": "Fehler beim Verarbeiten der Excel-Datei: {message}",
+      "xlsxTimeout": "Excel-Verarbeitung hat zu lange gedauert (Timeout nach 60s)",
+      "xmlParsing": "XML-Parsing fehlgeschlagen: {errors}",
+      "xmlNoValidData": "Keine gültigen Patientendaten in der XML-Datei gefunden.",
+      "xmlProcessing": "XML-Verarbeitung fehlgeschlagen: {message}",
+      "mockDataHttp": "Mock-Daten Anfrage fehlgeschlagen: {statusText}",
+      "mockDataLoad": "Mock-Daten konnten nicht geladen werden: {message}",
+      "noDataForAnalysis": "Keine Daten für die Analyse verfügbar.",
+      "saveFailed": "Speichern fehlgeschlagen.",
+      "unknown": "Unbekannter Fehler",
+      "uploadFailedTitle": "Datei konnte nicht gelesen werden",
+      "boxNotSupportedTitle": "Box noch nicht unterstützt",
+      "boxNotSupportedHint": "Die Datei wurde gelesen und einer OncoBox zugeordnet. Für diese Box fehlt noch die Auswertung, an der Datei liegt es nicht.",
+      "uploadFailedHint": "Mögliche Ursachen:",
+      "uploadFailedDismiss": "Schließen",
+      "uploadFailedReasons": {
+        "format": "Dateiformat passt nicht (XML / CSV / XLSX / TXT erforderlich).",
+        "headers": "Spaltenüberschriften werden nicht erkannt - siehe Hilfeseite für unterstützte Aliase wie PatientID, DiagnosisDate, Event usw.",
+        "required": "Pflichtfelder fehlen (mindestens DiagnosisDate und Event bzw. SurvivalTime).",
+        "encoding": "Falsche Zeichencodierung - empfohlen wird UTF-8.",
+        "empty": "Datei ist leer oder enthält nur Kopfzeilen ohne Datensätze."
+      }
+    },
+    "testData": {
+      "title": "Testdaten",
+      "description": "Laden Sie vorbereitete Patientendaten zum Testen.",
+      "load": "Datensatz laden",
+      "patientCount": "{count} Patienten",
+      "filePrefix": "testdaten",
+      "filePatientsSuffix": "patienten",
+      "tip": "Tipp: Sie können XML oder CSV exportieren und später wieder importieren.",
+      "groups": {
+        "public": {
+          "title": "Öffentliche Datensätze",
+          "description": "Veröffentlichte Kohorten aus der Fachliteratur. Geeignet, um Ergebnisse gegen publizierte Kurven zu prüfen."
+        },
+        "synthetic": {
+          "title": "Synthetische Testdaten",
+          "description": "Im Browser erzeugte Kohorten verschiedener Größe. Sie enthalten keine echten Patientendaten."
+        },
+        "features": {
+          "title": "Datensätze für einzelne Funktionen",
+          "description": "Kohorten, die eine bestimmte Funktion vorführen, etwa die Anomalieprüfung oder das krankheitsfreie Überleben."
+        }
+      },
+      "scenarios": {
+        "comprehensive": {
+          "name": "Umfangreich",
+          "description": "Große gemischte Kohorte mit mehreren Entitäten."
+        },
+        "dfs": {
+          "name": "Krankheitsfreies Überleben",
+          "description": "Fokussierter Datensatz mit DFS-Ereignissen."
+        },
+        "small": {
+          "name": "Klein",
+          "description": "Schneller Datensatz für Checks."
+        },
+        "medium": {
+          "name": "Mittel",
+          "description": "Ausgewogener Datensatz für typische Analysen."
+        },
+        "large": {
+          "name": "Groß",
+          "description": "Großer Datensatz für Performance-Tests."
+        },
+        "mamma": {
+          "name": "Mamma",
+          "description": "Mamma-Kohorte mit Staging-Verteilung."
+        },
+        "breastCancer": {
+          "name": "Mammakarzinom (kompakt)",
+          "description": "Kompakter Datensatz zum Mammakarzinom."
+        },
+        "lungCancer": {
+          "name": "Lungenkarzinom",
+          "description": "Lungenkrebs-Kohorte mit diversen Outcomes."
+        },
+        "pancreaticCancer": {
+          "name": "Pankreaskarzinom",
+          "description": "Pankreas-Kohorte mit kurzer Überlebenszeit."
+        },
+        "anomalyDemo": {
+          "name": "Anomalie-Demo",
+          "description": "39 Patienten mit gezielten Auffälligkeiten in allen vier Klassen (Plausibilität, Outlier, Duplikate, fehlende Felder) - ideal um das Anomalie-Panel zu testen."
+        },
+        "metabric": {
+          "name": "METABRIC (Brustkrebs)",
+          "description": "1973 Patientinnen mit PAM50-Subtypen, ER/HER2/PR-Status und ~30 Jahren Follow-up. <link>Curtis et al., Nature 2012</link>. Referenz-Kohorte für die Publikations-Auswertung."
+        },
+        "tcga": {
+          "name": "TCGA-BRCA (Brustkrebs)",
+          "description": "968 Patientinnen aus dem <link>TCGA Pan-Cancer Atlas 2018</link> mit PAM50-Subtypen, AJCC-Staging und Ethnizität. Validierungs-Kohorte zur unabhängigen Bestätigung der METABRIC-Ergebnisse."
+        }
+      }
+    },
+    "dataStatus": {
+      "title": "Geladene Daten",
+      "patientsLoaded": "Geladene Patienten",
+      "events": "Ereignisse",
+      "avgFollowUp": "Ø Follow-up"
+    },
+    "plot": {
+      "months": "Monate",
+      "survivalProbability": "Überlebenswahrscheinlichkeit",
+      "cumulativeIncidence": "Kumulative Inzidenz",
+      "ttftProbability": "Anteil ohne Erstbehandlung (TTFT)",
+      "overallTitle": "Gesamtüberleben",
+      "patientId": "Patienten-ID",
+      "icd10": "ICD-10",
+      "deathAtMonth": "Tod im Monat",
+      "deathAtDay": "Tod am Tag",
+      "eventDeath": "Tod",
+      "eventGeneric": "Ereignis",
+      "censored": "Zensiert",
+      "atRisk": "Gefährdet",
+      "events": "Ereignisse",
+      "noEvents": "keine Ereignisse",
+      "strata": "Strata",
+      "patientsAtRiskTitle": "Patienten unter Risiko",
+      "timeMonths": "Zeit (Monate)",
+      "timeDays": "Zeit (Tage)",
+      "followUpDate": "Follow-up-Datum",
+      "vitalDate": "Vitaldatum",
+      "savePngTitle": "PNG speichern",
+      "savePngLabel": "PNG speichern",
+      "savePdfTitle": "PDF speichern",
+      "savePdfLabel": "PDF speichern",
+      "pdfTitle": "Kaplan-Meier Report",
+      "notReached": "Nicht erreicht",
+      "ciArea": "{name} KI",
+      "close": "Schließen",
+      "fullscreen": "Vollbild",
+      "exitFullscreen": "Vollbild verlassen",
+      "atRiskLabel": "Gefährdet",
+      "eventsLabel": "Ereignisse",
+      "medianLineLabel": "Median",
+      "medianHover": "Median",
+      "medianFollowUp": "Reverse-KM-Nachbeobachtung"
+    },
+    "legend": {
+      "show": "{name} anzeigen",
+      "hide": "{name} ausblenden"
+    },
+    "stats": {
+      "medianSurvival": "Medianes Überleben",
+      "survival25": "Überleben (25%)",
+      "maxFollowUp": "Max. Follow-up",
+      "finalProbability": "Endwahrscheinlichkeit",
+      "months": "Monate"
+    }
+  },
+  "Results": {
+    "pageTitle": "Ergebnisse für {title}",
+    "pageTitleFallback": "Ergebnisse der Überlebensanalyse",
+    "datasetSource": {
+      "mock": "Testdatensatz",
+      "csv": "CSV-Datei",
+      "xlsx": "Excel-Datei",
+      "xml": "oBDS-XML",
+      "unknown": "Datensatz"
+    },
+    "backToHome": "Zurück zum Start",
+    "backToSelection": "Zurück zur Auswahl",
+    "loading": "Ergebnisse werden geladen...",
+    "loadingPlot": "Diagramm wird geladen...",
+    "anomalyIndicator": "{count} Auffälligkeiten gefunden",
+    "noData": "Keine Daten verfügbar",
+    "notAvailable": "Nicht verfügbar",
+    "notAvailableShort": "k. A.",
+    "notReported": "Keine Angabe",
+    "zeroEventWarning": "{count} Gruppe(n) enthalten nur zensierte Patienten und kein einziges Ereignis: {names}. Sie werden im Log-Rank-Test mitgerechnet, ihr Medianwert ist jedoch nicht bestimmbar.",
+    "yes": "Ja",
+    "no": "Nein",
+    "alive": "Lebend",
+    "dead": "Verstorben",
+    "censored": "Zensiert",
+    "all": "Alle",
+    "allPatients": "Alle Patienten",
+    "overallTotal": "Gesamt",
+    "analysisCount": "{count} Patienten analysiert",
+    "overallSurvivalLabel": "Gesamtüberleben",
+    "dfsLabel": "Krankheitsfreies Überleben",
+    "dfsEvent": "DFS-Ereignis",
+    "patientCount": "{count} Patienten",
+    "ageGroupChild": "Kind",
+    "ageGroupAdult": "Erwachsen",
+    "ageGroupSenior": "Senior",
+    "ageGroupChildShort": "Kind",
+    "ageGroupAdultShort": "Erw.",
+    "ageGroupSeniorShort": "Senior",
+    "days": "Tage",
+    "months": "Monate",
+    "errors": {
+      "loadFailed": "Daten konnten nicht geladen werden.",
+      "calculation": "Fehler bei der Berechnung.",
+      "patientProcessing": "Patientendaten konnten nicht verarbeitet werden.",
+      "workerNoCurves": "Worker lieferte keine Kurven.",
+      "pngExportUnavailable": "PNG-Export ist in diesem Browser nicht verfügbar.",
+      "pngExportUnavailableSimple": "PNG-Export ist nicht verfügbar."
+    },
+    "filters": {
+      "title": "Filter",
+      "expand": "Filter anzeigen",
+      "collapse": "Filter ausblenden",
+      "activeCount": "{count} aktiv",
+      "showMore": "Weitere Filter anzeigen",
+      "showLess": "Weitere Filter ausblenden",
+      "reset": "Filter zurücksetzen",
+      "resetTitle": "Alle Filter zurücksetzen",
+      "tags": {
+        "remove": "Filter entfernen: {label}"
+      },
+      "genderPlaceholder": "Geschlecht auswählen",
+      "ageGroupPlaceholder": "Altersgruppe auswählen",
+      "stagingPlaceholder": "UICC-Stadien auswählen",
+      "gradingPlaceholder": "Grading auswählen",
+      "spreadPlaceholder": "Ausbreitungskategorie auswählen",
+      "primaryCase": "Primärfall",
+      "primary": "Primär",
+      "notPrimary": "Nicht primär",
+      "primaryPlaceholder": "Primärfall auswählen",
+      "allYears": "Alle Jahre",
+      "titlePlaceholder": "Suche",
+      "spread": {
+        "local": "Lokal",
+        "locallyAdvanced": "Lokal fortgeschritten",
+        "advanced": "Fortgeschritten",
+        "metastatic": "Metastasiert",
+        "unknown": "Unbekannt"
+      }
+    },
+    "labels": {
+      "genderPrefix": "Geschlecht",
+      "ageGroupPrefix": "Altersgruppe",
+      "gradingPrefix": "Grading",
+      "stagingPrefix": "UICC-Stadium",
+      "uiccPrefix": "UICC",
+      "tCategoryPrefix": "T-Kategorie",
+      "tumorCategoriesPrefix": "Tumor-Kategorien",
+      "spreadCategoryPrefix": "Ausbreitungskategorie",
+      "primaryCasePrefix": "Primärfall",
+      "diagnosisDatePrefix": "Diagnosedatum",
+      "vitalDatePrefix": "Vitaldatum",
+      "icd10Prefix": "ICD-10"
+    },
+    "appliedFilters": {
+      "title": "Angewendete Filter",
+      "gender": "Geschlecht: {value}",
+      "ageGroup": "Altersgruppe: {value}",
+      "staging": "UICC-Stadium: {value}",
+      "grading": "Grading: {value}",
+      "spread": "Ausbreitung: {value}",
+      "primaryCase": "Primärfall: {value}",
+      "tumorCategories": "Tumor-Kategorien: {count}",
+      "tumorCategory": "Tumorkategorie: {value}",
+      "icd10": "ICD-10: {value}",
+      "years": "Jahre: {start}-{end}"
+    },
+    "summary": {
+      "reportDate": "Berichtsdatum",
+      "diagnosis": "Diagnose",
+      "timeRange": "Zeitraum",
+      "stratification": "Stratifizierung",
+      "pValue": "p-Wert",
+      "pValueUnavailable": "p-Wert nicht verfügbar"
+    },
+    "plotContext": {
+      "box": "Box {box}",
+      "unit": "Einheit: {unit}"
+    },
+    "sidebar": {
+      "presentation": "Darstellung"
+    },
+    "pairwise": {
+      "title": "Paarweise Vergleiche",
+      "groupA": "Gruppe A",
+      "groupB": "Gruppe B",
+      "pRaw": "p (roh)",
+      "pAdjusted": "p (Holm)",
+      "caption": "{count} paarweise Log-Rank-Vergleiche, korrigiert nach Holm.",
+      "none": "Keine auswertbaren Paarvergleiche."
+    },
+    "pHacking": {
+      "infoAriaLabel": "Hinweis zur Interpretation des p-Werts",
+      "tooltip": "Der p-Wert gilt für genau diese eine Fragestellung. Wer mehrere Stratifizierungen oder Filter durchprobiert und anschließend den kleinsten p-Wert berichtet, findet auch in reinem Zufall „signifikante“ Unterschiede. Legen Sie die Fragestellung vorab fest, oder kennzeichnen Sie den Befund ausdrücklich als explorativ."
+    },
+    "statsCard": {
+      "title": "Zusammenfassung",
+      "totalPatients": "Gesamtpatienten",
+      "totalPrimaryCases": "Primärfälle",
+      "fromPersons": "von {count} Personen",
+      "filteredPatients": "Gefilterte Patienten",
+      "events": "Ereignisse",
+      "cohortShare": "Kohortenanteil",
+      "curveComparison": "Kurvenvergleich",
+      "curveFinal": "Endüberleben: {value}%",
+      "curveFinalIncidence": "Endinzidenz: {value}%",
+      "finalProbability": "Endwahrscheinlichkeit",
+      "diagnosisRange": "Diagnosezeitraum",
+      "selectedCategories": "Ausgewählte Kategorien: {count}",
+      "loadingChart": "Diagramm wird geladen..."
+    },
+    "stats": {
+      "maxFollowUp": "Max. Follow-up",
+      "medianSurvival": "Medianes Überleben",
+      "medianIncidence": "Median (kumulative Inzidenz)",
+      "survival25": "Überleben (25%)",
+      "incidence25": "Kumulative Inzidenz (25%)",
+      "months": "Monate",
+      "perGroupTitle": "Überlebenszeiten je Gruppe",
+      "perGroupTitleIncidence": "Inzidenzzeiten je Gruppe",
+      "medianAge": "Medianes Alter"
+    },
+    "patientsAtRisk": {
+      "title": "Patienten unter Risiko",
+      "strata": "Strata",
+      "atRisk": "Gefährdet",
+      "observed": "Beobachtet",
+      "censored": "Zensiert",
+      "noData": "Keine Daten verfügbar",
+      "noDataVisibleGroups": "Keine Daten für sichtbare Gruppen",
+      "noTimePoints": "Keine Zeitpunkte verfügbar"
+    },
+    "followUp": {
+      "durationLabel": "Beobachtete Nachbeobachtung",
+      "medianAbbr": "Median",
+      "minAbbr": "Min",
+      "maxAbbr": "Max",
+      "eventFreeLabel": "Mediane ereignisfreie Zeit",
+      "notReached": "nicht erreicht",
+      "reverseKmLabel": "Nachbeobachtung (reverse KM)",
+      "reverseKmInfoAriaLabel": "Hinweis zur reverse Kaplan-Meier-Schätzung",
+      "reverseKmTooltip": "Diese Zahl schätzt die mittlere Beobachtungsdauer der Kohorte und bezieht dabei auch die Fälle korrekt ein, die noch ohne Ereignis beobachtet werden (Zensierung). Das ist das methodisch anerkannte Mass für die Nachbeobachtungszeit einer Studie, im Diagramm oben als Annotation eingeblendet. Sie weicht von der Zeile daneben ab, weil die einfach die Mitte aller beobachteten Zeiten bildet, ohne diese Korrektur.",
+      "plainMedianInfoAriaLabel": "Hinweis zur beobachteten Nachbeobachtungsdauer",
+      "tooltip": "Einfacher Median der beobachteten Nachbeobachtungszeiten, ohne Zensierung zu berücksichtigen. Manche Zertifizierungsbögen verlangen genau diese Zahl. Die reverse Kaplan-Meier-Schätzung daneben bezieht die Zensierung ein und weicht deshalb meist leicht ab."
+    },
+    "pie": {
+      "all": "Alle",
+      "filtered": "Gefiltert",
+      "excluded": "Ausgeschlossen",
+      "dfs": "DFS",
+      "tooltip": "{label}: {value}",
+      "noData": "Keine Daten"
+    },
+    "primary": "Primär",
+    "notPrimary": "Nicht primär",
+    "table": {
+      "title": "Patiententabelle",
+      "searchAll": "Alle durchsuchen",
+      "searchIn": "Suchen in",
+      "pageOf": "Seite {page} von {total}",
+      "allColumns": "Alle Spalten",
+      "patientId": "Patienten-ID",
+      "caseId": "Fallnummer",
+      "icd10": "ICD-10",
+      "diagnosisDate": "Diagnosedatum",
+      "vitalDate": "Vitaldatum",
+      "primaryCase": "Primärfall",
+      "events": "Ereignisse",
+      "months": "Monate",
+      "probability": "Wahrscheinlichkeit",
+      "tCategory": "T-Kategorie",
+      "stratificationGroup": "Stratifizierungsgruppe"
+    },
+    "export": {
+      "heading": "Exportumfang",
+      "modeFull": "Vollständig",
+      "modeNoPatients": "Ohne Patientendaten",
+      "modePseudonymized": "Pseudonymisiert",
+      "tipFull": "Alle Daten unverändert, einschließlich echter Patienten-IDs und Behandlungsdaten. Nur für den internen Gebrauch.",
+      "tipNoPatients": "Die Patiententabelle entfällt vollständig. Überlebenskurven, Statistik und Cox-Analyse bleiben unverändert enthalten. Angaben zur Quelldatei werden entfernt.",
+      "tipPseudonymized": "Patienten-IDs werden durch P0001, P0002 … ersetzt. Diagnose- und Enddatum werden je Patient um bis zu ±4 Wochen verschoben; die Überlebenszeit bleibt exakt erhalten. Angaben zur Quelldatei werden entfernt.",
+      "noteAnonymized": "Pseudonymisiert: Patienten-IDs ersetzt, Diagnose- und Enddatum je Patient um bis zu ±4 Wochen verschoben.",
+      "noteNoPatients": "Die Patiententabelle wurde bewusst aus diesem Export entfernt. Alle Auswertungen, Kurven und Statistiken beruhen auf dem vollständigen Datensatz.",
+      "noteOriginalData": "Alle Auswertungen dieses Berichts - Überlebenskurven, Log-Rank-Test und Cox-Analyse - wurden auf den unveränderten Originaldaten gerechnet. Die Pseudonymisierung wurde erst danach auf die abgedruckte Patiententabelle angewendet.",
+      "noteYearBoundary": "Hinweis: Liegt ein Diagnosedatum nahe am Jahreswechsel, kann die Verschiebung es ins Nachbarjahr versetzen. Bei Stratifizierung nach Diagnosejahr kann ein Patient in der Tabelle daher scheinbar im falschen Stratum stehen; die Kurven nutzen das echte Jahr.",
+      "suffixNoPatients": "ohne-patientendaten",
+      "suffixPseudonymized": "pseudonymisiert",
+      "infoAriaLabel": "Erklärung zu {option}",
+      "generateExcel": "Excel erstellen"
+    },
+    "pdf": {
+      "title": "Kaplan-Meier Report",
+      "createdAt": "Erstellt am: {date}",
+      "analysisParams": "Analyseparameter",
+      "diagnosis": "Diagnose: {value}",
+      "timeRange": "Zeitraum: {value}",
+      "stratification": "Stratifizierung: {value}",
+      "noStratification": "Keine",
+      "patientCount": "Patienten: {count}",
+      "eventCount": "Ereignisse: {count}",
+      "logRank": "Log-Rank p-Wert: {value}",
+      "medianFollowUp": "Median Follow-up: {value}",
+      "medianNotReached": "nicht erreicht",
+      "statsTitle": "Überlebensstatistik",
+      "statsTitleIncidence": "Inzidenzstatistik",
+      "stats": {
+        "group": "Gruppe",
+        "n": "N",
+        "events": "Ereignisse",
+        "median": "Medianes Überleben",
+        "medianIncidence": "Median (kumulative Inzidenz)"
+      },
+      "coxSummaryTitle": "Cox-Regression",
+      "coxReference": "Referenzgruppe: {value}",
+      "coxTies": "Tie-Methode: {value}",
+      "coxConcordance": "Concordance (C): {value}",
+      "coxLrTest": "Likelihood-Ratio-Test p: {value}",
+      "cox": {
+        "group": "Gruppe",
+        "hr": "HR",
+        "ci": "95% KI",
+        "p": "p-Wert"
+      },
+      "appliedFilters": "Angewendete Filter",
+      "filters": {
+        "gender": "Geschlecht: {value}",
+        "ageGroup": "Altersgruppe: {value}",
+        "tumorCategories": "Tumor-Kategorien: {value} {extra}",
+        "more": "+{count} mehr",
+        "staging": "UICC-Stadien: {value}",
+        "grading": "Grading: {value}",
+        "primaryCase": "Primärfall: {value}",
+        "spread": "Ausbreitung: {value}",
+        "diagnosisYears": "Diagnosejahre: {start}-{end}"
+      },
+      "kmCurveTitle": "Kaplan-Meier Kurve",
+      "patientsAtRisk": "Patienten unter Risiko",
+      "cohortSizes": "Kohortenstärken",
+      "coxForestTitle": "Cox-Regression: Forest-Plot",
+      "coxTableTitle": "Cox-Regression: Tabelle",
+      "patientTableTitle": "Patiententabelle",
+      "table": {
+        "group": "Gruppe",
+        "n": "N",
+        "events": "Ereignisse",
+        "hazardRatio": "Hazard Ratio",
+        "pValue": "p-Wert"
+      },
+      "pageOf": "Seite {page} von {total}",
+      "footer": "Erstellt {date}",
+      "fileName": "kaplan-meier-report",
+      "saveButton": "PDF-Report herunterladen",
+      "saveTitle": "PDF-Report herunterladen",
+      "generate": "Report erstellen",
+      "logRankLabel": "Log-Rank p-Wert",
+      "medianFollowUpLabel": "Reverse-KM-Nachbeobachtung",
+      "errors": {
+        "plotlyMissing": "Plotly nicht verfügbar.",
+        "kmPlot": "KM-Plot Export fehlgeschlagen: {message}",
+        "atRiskPlot": "Patienten-unter-Risiko Export fehlgeschlagen: {message}",
+        "coxPlot": "Cox-Plot Export fehlgeschlagen.",
+        "coxTable": "Cox-Tabelle Export fehlgeschlagen."
+      }
+    }
+  },
+  "Help": {
+    "title": "Hilfe",
+    "overview": {
+      "title": "Übersicht",
+      "body": "ONCOcurve führt vollständige Überlebenszeitanalysen direkt im Browser durch: Kaplan-Meier-Kurven, Log-Rank-Test (auch gewichtete Varianten), Cox-Regression und Zeit bis Erstbehandlung (TTFT). Sie laden oBDS-XML, CSV oder Excel, filtern und stratifizieren die Kohorte ohne Programmierkenntnisse und exportieren Grafiken, Tabellen und einen vollständigen PDF-Report. Alle Berechnungen laufen lokal auf Ihrem Gerät; es werden keine Patientendaten übertragen. Diese Seite erklärt jede Funktion Schritt für Schritt."
+    },
+    "dataProcessing": {
+      "title": "Datenverarbeitung",
+      "body": "Die Verarbeitung erfolgt lokal im Browser.",
+      "items": {
+        "noTransfer": "Es werden keine Daten an Server übertragen.",
+        "removeData": "Beim Schließen des Tabs werden alle Daten gelöscht."
+      }
+    },
+    "filters": {
+      "title": "Filter",
+      "body": "Filter schränken die analysierte Kohorte ein, ohne die Originaldaten zu verändern. Alle aktiven Filter werden im Ergebnis und in jedem Export angezeigt, sodass eine Analyse exakt reproduzierbar bleibt.",
+      "items": {
+        "dimensions": "Filterbar nach: Geschlecht, Altersgruppe, ICD-10-Code, Tumorkategorie, UICC-Stadium, Grading, Primärfall, Diagnosejahr und Metastasierung. Filter lassen sich frei kombinieren.",
+        "sidebar": "Alle Filter liegen in der linken Seitenleiste.",
+        "toggle": "Die Seitenleiste lässt sich über den Button am linken Rand ein- und ausklappen.",
+        "responsive": "Auf kleinen Bildschirmen (Tablet, Smartphone) passt sich die Filterleiste an."
+      }
+    },
+    "stratification": {
+      "title": "Stratifizierung (Gruppenvergleich)",
+      "body": "Teilen Sie die Kohorte in Gruppen, um ihre Überlebenskurven zu vergleichen. Wählen Sie ein Kriterium in der Seitenleiste; pro Gruppe entsteht eine eigene farbige Kurve, und Log-Rank-Test sowie Cox-Regression laufen automatisch.",
+      "items": {
+        "builtin": "Eingebaute Kriterien: unter anderem Geschlecht, Altersgruppe, T-, N- und M-Kategorie, Grading, Tumorentität und entitätsspezifisches Staging.",
+        "extra": "Eigene Spalten: jede zusätzliche Spalte aus CSV oder Excel (etwa PAM50 oder IGHV) wird automatisch als Stratifizierungsvariable erkannt.",
+        "binning": "Numerische Spalten (etwa Alter oder Laborwerte) werden in Gruppen eingeteilt, per Quantilen (2 bis 5) oder manuellen Grenzwerten.",
+        "compare": "Einzelne Gruppen lassen sich ein- und ausblenden; die Referenzgruppe der Cox-Regression ist frei wählbar."
+      }
+    },
+    "export": {
+      "title": "Export und Report",
+      "body": "Jedes Ergebnis lässt sich vollständig exportieren, für Berichte, Publikationen oder die unabhängige Nachrechnung.",
+      "items": {
+        "report": "<strong>PDF-Report</strong>: über den Button „PDF-Report herunterladen\" oben rechts. Enthält Analyse-Parameter, Kaplan-Meier-Kurve, Numbers-at-Risk, Landmark-Raten (1, 3 und 5 Jahre), Log-Rank, Cox (Forest-Plot und Tabelle) sowie Kohortengrößen. Per Checkbox optional mit Patiententabelle. Der Dateiname enthält Kohorte, Auswahl und Datum.",
+        "figures": "<strong>Grafiken</strong>: Kaplan-Meier-Kurve (mit Numbers-at-Risk) und Cox-Forest-Plot als PNG und als SVG (Vektorgrafik); die Statistik-Karte als PNG und SVG.",
+        "data": "<strong>Daten</strong>: Patiententabelle als CSV; die vollständige Analyse als Excel-Arbeitsmappe (Kurven, Statistik, Log-Rank, Cox) zur Nachrechnung in R oder Python; Cox-Ergebnisse zusätzlich separat als CSV und Excel."
+      }
+    },
+    "kaplanMeier": {
+      "title": "Kaplan-Meier",
+      "body": "Die Kaplan-Meier-Kurve schätzt die Überlebenswahrscheinlichkeit über die Zeit.",
+      "items": {
+        "axes": "Zeit in Monaten, Wahrscheinlichkeit auf der y-Achse.",
+        "multipleGroups": "Vergleiche mehrere Gruppen.",
+        "patientsAtRisk": "Tabelle der Patienten unter Risiko unterhalb des Plots.",
+        "plotDisplay": "Über die Seitenleiste „Plot-Darstellung\" lassen sich Median-Linien, Konfidenzbänder, p-Wert, Landmark-Tabelle (1/3/5 Jahre) und Median-Follow-up-Anzeige einzeln ein- und ausblenden."
+      }
+    },
+    "boxregeln": {
+      "title": "Rechenregeln der OncoBoxen",
+      "body": "Lädt man eine OncoBox-Datei, rechnet die Kurve nach der Spezifikation genau dieser Box. Die Boxen unterscheiden sich, und diese Unterschiede werden nicht eingeebnet. Kurven verschiedener Boxen sind deshalb nicht unbesehen vergleichbar.",
+      "unitNote": "Alle Zeiten aus OncoBox-Daten sind Tage seit dem Diagnosedatum, so wie es die Spezifikationen vorschreiben. Auswertungen aus oBDS, CSV, TXT und Excel rechnen weiter in Monaten.",
+      "estimator": "Der Schätzer ist in allen Boxen derselbe: die Fälle werden nach Zeit sortiert, die Risikomenge sinkt je Zeile um eins, und die Überlebenswahrscheinlichkeit ist das Produkt der Faktoren (r minus delta) geteilt durch r. Gleiche Zeiten werden nacheinander abgearbeitet, nicht zusammengefasst. Das weicht von der üblichen Konvention ab und liefert bei gleichen Zeiten leicht andere Werte.",
+      "quellenHinweis": "Die Fundstelle unter jedem Abschnitt nennt Spezifikation und Blatt und verweist auf die Herstellerseite der OnkoZert GmbH, auf der diese Dateien veröffentlicht werden. Eine dauerhafte Adresse der einzelnen Datei gibt es nicht, die Fassungen wechseln mit dem Auditjahr.",
+      "originTitle": "Worauf eine Regel beruht",
+      "originBody": "Jede Kurve trägt eine Herkunftsangabe, auch in der Exportdatei. Vorschrift heißt: wörtlich aus dem Auswertungsblatt der Box. Abgeleitet heißt: aus der Ereignisdefinition derselben Box gefolgert, dort aber nicht als Kurve vorgeschrieben. Literatur heißt: aus den veröffentlichten Standards für Studienendpunkte, nicht vom Zertifizierer bestätigt.",
+      "brust": {
+        "title": "Brust 1.0, Vorschrift",
+        "source": "eb_brust-N1.1.1, Blätter Kaplan-Meier (DFS) und (OAS)",
+        "excluded": "Nicht in der Auswertung: postoperativ nicht tumorfrei (M1 oder R1/R2), Fall mit relevanter Krebsvorerkrankung, Fall ohne datierte Follow-up-Meldung. Für das Gesamtüberleben gilt allein das letzte Kriterium.",
+        "event": "Ereignis ist das erste Follow-up mit lokalem Rezidiv, Lymphknotenrezidiv, Fernmetastasen oder Zweittumor. Der Zweittumor zählt hier ausdrücklich mit, anders als in der verbreiteten Lesart des krankheitsfreien Überlebens.",
+        "death": "Wer ohne Rezidiv verstirbt, geht als Ereignis am Sterbedatum ein. Ohne Rezidiv und ohne Sterbedatum wird am letzten datierten Follow-up zensiert."
+      },
+      "darm": {
+        "title": "Darm 1.0, Vorschrift",
+        "source": "eb_darm-P1.1.1, Blätter Kaplan-Meier DFS I und II sowie OAS I und II",
+        "excluded": "Nicht in der Auswertung: kein UICC-Stadium, UICC IV, innerhalb von 30 Tagen nach der Operation verstorben, relevante Krebsvorerkrankung, synchron behandelter weiterer kolorektaler Primärtumor, keine Vollremission (kein R0 oder postoperativ M1a/b/c), keine Follow-up-Meldung oder nur mit Life-Status.",
+        "event": "Ereignis ist das erste Follow-up, in dem eines der vier Felder für lokoregionäres Rezidiv, Lymphknotenrezidiv, Fernmetastasen oder Zweittumor den Wert 1 trägt.",
+        "death": "Wer ohne Rezidiv verstirbt, geht als Ereignis ein, gerechnet bis zum Follow-up-Datum. Die Box führt kein eigenes Sterbedatum, der Tod wird im Follow-up gemeldet.",
+        "window": "Der Beobachtungszeitraum endet nach 5 Jahren. Wer bis dahin kein Ereignis hatte, wird am Rand zensiert. Nur die Darm-Box macht diese Vorgabe.",
+        "unknown": "Die Rezidivfelder von Darm kennen den Wert 2 für unbekannt. Ein Fall mit einer 2 erfüllt keine der drei Kategorien der Spezifikation und bleibt deshalb aus der Auswertung. Diese Lücke steht beim Zertifizierer zur Klärung."
+      },
+      "prostata": {
+        "title": "Prostata 1.0, Vorschrift",
+        "source": "eb_prostata-Q1.1.1, Blätter Kaplan-Meier (DFS) und (OAS) sowie Categories",
+        "excluded": "Der Ausschluss verzweigt zuerst nach Falltyp: nicht interventionell, interventionell oder Zufallsbefund. Ein nicht interventioneller Fall zählt geschlossen als nicht tumorfrei; bei den übrigen entscheiden Operationstyp, Bestrahlungstyp und Randstatus. Dazu die relevante Krebsvorerkrankung und die fehlende gültige Follow-up-Meldung.",
+        "event": "Ereignis ist das erste Follow-up mit Lokalrezidiv, biochemischem Rezidiv, Metastase oder Zweittumor. Das biochemische Rezidiv kennt keine andere Box; es tritt meist deutlich vor einem sichtbaren Rezidiv auf.",
+        "dates": "Prostata nennt das Ereignisdatum selbst, getrennt je Ereignistyp. Die Zeit läuft deshalb bis zu diesem Datum, nicht bis zum Untersuchungsdatum. Bei Brust und Darm ist diese Näherung unvermeidbar, hier nicht.",
+        "validity": "Eine Follow-up-Meldung gilt nur als gültig, wenn bei einem Lebenden kein Statusfeld unbekannt ist. Bei einem Verstorbenen sind Lücken erlaubt, dafür muss ein Sterbedatum vorliegen."
+      },
+      "familie2": {
+        "title": "Brust, Lunge und Darm 2.0, Ableitung",
+        "source": "Blatt EQ Kategorien (Klinisch), auf den Verlauf übertragen",
+        "note": "Diese Boxen schreiben keine Kurve vor. Ihre Spezifikationen kennen nur Raten zu den Stichzeitpunkten 1, 3, 5 und 10 Jahren. Die Kurve folgt deshalb aus ihrer eigenen Ereignisdefinition, ist aber nicht selbst Vorgabe des Zertifizierers.",
+        "event": "Tumorfrei heißt: Residualstatus R0, oder im Verlauf Vollremission zusammen mit kein Nachweis in lokal, Lymphknoten und Fernmetastasen. Ereignis ist die erste Abweichung davon, oder ein Zweittumor.",
+        "unknown": "Meldungen mit unbekanntem Status werden übersprungen. Sie sind weder ein sauberer Befund noch ein Ereignis; zensiert wird an der letzten Meldung, die eine Aussage trägt.",
+        "notTaken": "Zwei Bedingungen des EQ-Schemas gelten hier nicht, weil sie zur Stichzeitpunktlogik gehören: das Toleranzfenster um den Stichzeitpunkt und die Forderung nach einem aktuellen Follow-up im Korridor."
+      },
+      "weitere": {
+        "title": "Die fünf Endpunkte ohne Boxvorschrift, Literatur",
+        "body": "Lokalrezidivrate, lokalrezidivfreies Überleben, metastasenfreies Überleben, progressionsfreies Überleben und Überleben nach Progression sind in keiner OncoBox-Spezifikation als Kurve definiert. Ihre Regeln stützen sich auf die veröffentlichten Standards für Studienendpunkte und sind vom Zertifizierer nicht bestätigt.",
+        "rate": "Die Lokalrezidivrate wird als kumulative Inzidenz gerechnet, nicht als Kaplan-Meier-Kurve. Wer stirbt, bekommt kein Lokalrezidiv mehr; der Tod ist hier ein konkurrierendes Ereignis, kein Teil des Endpunkts. Kaplan-Meier behandelt Verstorbene als zensiert und überschätzt die Rate dadurch systematisch, bei Brustkrebs im Mittel um rund 28 Prozent.",
+        "difference": "Deshalb unterscheiden sich Rate und rezidivfreies Überleben auch inhaltlich: die Rate fragt, wie viele ein Lokalrezidiv bekommen, das rezidivfreie Überleben fragt, wie lange jemand ohne Lokalrezidiv am Leben bleibt.",
+        "gap": "Progressionsfreies Überleben und Überleben nach Progression stehen nur zur Verfügung, wo die Quelle eine Progression dokumentiert. Die Gesamtbeurteilung von Brust 1.0 führt den Wert P zwar, doch die Kategorien des Auswertungsblatts nutzen ihn nicht: für die Progression gibt es dort keine vorgeschriebene Regel. Darm 1.0 führt das Feld gar nicht. Das ist eine Lücke der Box, keine fehlende Umsetzung."
+      },
+      "differences": {
+        "title": "Wo sich die Boxen unterscheiden",
+        "deathDate": "Brust, Prostata und die 2.0-Boxen rechnen den Tod bis zum Sterbedatum, Darm bis zum Follow-up-Datum.",
+        "window": "Darm begrenzt den Beobachtungszeitraum auf 5 Jahre, keine andere Box tut das.",
+        "codes": "Brust und Prostata codieren die Verlaufsfelder mit Buchstaben, Darm mit Ziffern. Dieselbe Bedingung liest sich deshalb je Box anders.",
+        "extra": "Prostata wertet zusätzlich das biochemische Rezidiv und nennt eigene Ereignisdaten. Kein anderes Modell tut das."
+      }
+    },
+    "logRank": {
+      "title": "Log-Rank-Test",
+      "body": "Der Log-Rank-Test vergleicht Überlebenskurven.",
+      "items": {
+        "interpretation": "Kleiner p-Wert bedeutet starkere Unterschiede.",
+        "assumption": "Setzt proportionale Hazards voraus."
+      },
+      "variantsTitle": "Gewichtete Varianten",
+      "variantsIntro": "Der Standard-Log-Rank ist optimal bei proportionalen Hazards. Bei sich kreuzenden Kurven oder nicht-proportionalen Hazards bieten gewichtete Varianten mehr Power, indem sie bestimmte Zeitbereiche stärker betonen. Die Variante kann in der Seitenleiste „Plot-Darstellung\" gewählt werden.",
+      "variantsTable": {
+        "variant": "Variante",
+        "weight": "Gewicht w(t)",
+        "when": "Wann nutzen"
+      },
+      "variants": {
+        "logRank": {
+          "name": "Standard (Mantel-Haenszel)",
+          "when": "Default; optimal bei proportionalen Hazards. Uniforme Gewichtung über alle Event-Zeitpunkte."
+        },
+        "wilcoxon": {
+          "name": "Wilcoxon (Gehan-Breslow)",
+          "when": "Gewichtet frühe Ereignisse stärker (n(t) im Nenner sinkt mit der Zeit). Sensitiv für frühe Unterschiede, weniger sensitiv für späte Plateau-Unterschiede."
+        },
+        "petoPeto": {
+          "name": "Peto-Peto",
+          "when": "Gewichtet mit der gepoolten Überlebensfunktion S(t) (Prentice-Modifikation). Robuste Variante von Wilcoxon, weniger empfindlich gegen Zensierungs-Muster."
+        },
+        "taroneWare": {
+          "name": "Tarone-Ware",
+          "when": "Kompromiss zwischen Standard und Wilcoxon (√n(t)). Allround-Variante wenn unklar wo Unterschiede liegen."
+        }
+      },
+      "variantsNote": "Hinweis: Die Wahl der Variante sollte vor Ansicht der Daten erfolgen, nicht nach dem niedrigsten p-Wert (Cherry-Picking-Risiko). Im Zweifel den Standard-Log-Rank reporten und gewichtete Varianten als Sensitivitätsanalyse."
+    },
+    "cox": {
+      "title": "Cox-Regression",
+      "body": "Die Cox-Regression schätzt Hazard Ratios für Gruppen.",
+      "items": {
+        "outputs": "Ausgabe umfasst Hazard Ratios und Konfidenzintervalle.",
+        "interpretation": "Hazard Ratios über 1 bedeuten höheres Risiko.",
+        "estimation": "Schätzer basiert auf partieller Likelihood.",
+        "ties": "<strong>Ties-Methode:</strong> Die Behandlung gleichzeitiger Ereigniszeiten lässt sich zwischen <strong>Efron</strong> (Standard, identisch zu R/SAS) und <strong>Breslow</strong> umschalten. Efron ist bei vielen Ties genauer; Breslow steht für Vergleichbarkeit mit älteren Auswertungen zur Verfügung.",
+        "assumption": "Setzt proportionale Hazards voraus."
+      }
+    },
+    "upload": {
+      "title": "Upload",
+      "body": "Laden Sie oBDS-XML- oder CSV-Dateien hoch.",
+      "items": {
+        "localSample": "Lokale Beispiel-XML verwenden.",
+        "specLink": "oBDS-Spezifikation öffnen."
+      },
+      "footer": "Bei Fragen wenden Sie sich an Ihr Datenteam.",
+      "acceptedFormats": {
+        "title": "Akzeptierte Formate",
+        "xml": "oBDS-XML (.xml)",
+        "csv": "CSV / Tab-getrennt (.csv, .txt)",
+        "xlsx": "Excel (.xlsx)"
+      },
+      "headerDetection": "Die Spaltenreihenfolge ist beliebig. Die Zuordnung erfolgt über den Spaltennamen (Header). Akzeptierte Aliase pro Feld sind unten gelistet.",
+      "requiredColumns": {
+        "title": "Pflichtspalten",
+        "event": "event (status, vital_status, tod, …)",
+        "survivalTime": "survivalTime (months, follow_up, …) ODER diagnosisDate + endDate/deathDate"
+      },
+      "recommendedColumns": {
+        "title": "Empfohlene Spalten",
+        "id": "id (patient_id, pid, patnr, …)",
+        "tumorType": "tumorType (icd, icd10, diagnosis, …)",
+        "diagnosisDate": "diagnosisDate (datum, erstdiagnose, …)"
+      },
+      "optionalColumns": {
+        "title": "Optionale Spalten",
+        "list": "gender, age, staging, grading, T/N/M, tumorCategory, primaerfall"
+      },
+      "extraColumns": {
+        "title": "Eigene Zusatz-Spalten",
+        "intro": "Beliebige weitere Spalten (z.B. „medication\", „treatment_arm\", „dose_mg\") werden automatisch als Stratifizierungsvariablen verfügbar gemacht.",
+        "numeric": "Numerische Spalten (auch mit Einheit wie „mg\") bekommen ein Binning-UI (Quartile / eigene Schwellen).",
+        "categorical": "Textuelle Spalten werden nach distinkten Werten gruppiert (Cap bei 30 Werten).",
+        "conversion": "Einheiten werden automatisch konvertiert (Masse/Volumen/Länge/Zeit), wenn eine Spalte gemischte Einheiten enthält."
+      },
+      "examples": {
+        "title": "Beispieldateien",
+        "csvLink": "Beispiel CSV mit Zusatz-Spalten",
+        "xlsxLink": "Beispiel Excel mit Zusatz-Spalten",
+        "mixedUnitsLink": "Beispiel CSV mit gemischten Einheiten"
+      },
+      "ttft": {
+        "title": "Zeit bis Erstbehandlung (TTFT)",
+        "intro": "Hat Ihre Datei eine Spalte firstTreatmentDate, schaltet das Tool automatisch auf den TTFT-Endpunkt um. Die Zeit läuft dann von der Erstdiagnose bis zur ersten Therapie (Ereignis), sonst bis zum letzten Kontakt (zensiert).",
+        "diagnosis": "diagnosisDate: Erstdiagnose, dient als Startzeit t0.",
+        "treatment": "firstTreatmentDate: Datum der ersten systemischen Therapie und damit das Ereignis. Leer lassen, wenn noch unbehandelt.",
+        "lastContact": "lastContactDate: letzter Kontakt und Zensurzeitpunkt. Bei Tod vor Therapie hier das Sterbedatum eintragen.",
+        "group": "IGHV oder eine andere Spalte: freie Gruppierung zum Stratifizieren, etwa mutated und unmutated.",
+        "note": "survivalTime und event müssen Sie nicht angeben, sie werden aus den Daten abgeleitet. Tod vor Therapie wird pragmatisch beim Tod zensiert (kein Fine-Gray-Modell).",
+        "example": "Beispieldatei herunterladen (CLL, IGHV)"
+      }
+    },
+    "sampleFiles": {
+      "intro": "Alle mitgelieferten Beispieldateien an einer Stelle. Sie enthalten keine echten Patientendaten und lassen sich über den Upload direkt wieder einlesen.",
+      "sources": {
+        "title": "Wo die Originale liegen",
+        "intro": "Die Dateien stammen von den Stellen, die sie herausgeben. Die Links öffnen sich in einem neuen Tab; die Anwendung selbst ruft nichts davon ab.",
+        "oncobox": "XML-Schemata und Musterlösungen der OncoBoxen, herausgegeben von der OnkoZert GmbH",
+        "dkg": "Erhebungs- und Kennzahlenbögen der Zertifizierung, darin die Auswertungsblätter mit den Rechenregeln",
+        "onkozert": "Hinweise, Formulare und Zertifizierungsunterlagen von OnkoZert",
+        "gekid": "Empfehlungen zur Analyse von Überlebensraten, auf die sich die Auswertungsblätter berufen"
+      },
+      "note": "Die OncoBox-Dateien sind die veröffentlichten Musterlösungen der OnkoZert GmbH für Hersteller. Alle übrigen Dateien sind erzeugt.",
+      "groups": {
+        "obds": {
+          "title": "oBDS-XML",
+          "description": "Meldungen im oBDS-Format, wie sie ein Krebsregister ausgibt."
+        },
+        "oncobox": {
+          "title": "OncoBox-XML",
+          "description": "Musterlösungen der Zertifizierungsboxen, je eine Datei pro Box."
+        },
+        "csv": {
+          "title": "CSV",
+          "description": "Kohorten als Tabelle, eine Zeile je Fall."
+        },
+        "excel": {
+          "title": "Excel",
+          "description": "Dieselbe Tabellenform als Arbeitsmappe, mit Zusatzspalten und einer Kohorte für die Zeit bis zur Erstbehandlung."
+        },
+        "extras": {
+          "title": "Sonderfälle",
+          "description": "Dateien für einzelne Funktionen: Zusatzspalten, gemischte Einheiten, eingebaute Auffälligkeiten."
+        }
+      },
+      "title": "Beispieldateien"
+    },
+    "wileyStaging": {
+      "title": "Entitätenspezifisches Staging nach Wiley",
+      "body": "Das entitätenspezifische Staging basiert auf der TNM-Klassifikation maligner Tumoren von Wittekind (Hrsg.), 9. Auflage (Wiley-VCH, 2025). Nicht alle onkologischen Entitäten sind darin enthalten. Die Klassifikation gilt ausschließlich für die nachfolgend aufgeführten Tumorentitäten.",
+      "entitiesNote": "Enthaltene Entitäten ({count}):"
+    },
+    "anomalies": {
+      "title": "Anomalie-Warnungen",
+      "intro": "Beim Upload und auf der Ergebnisseite werden Datensätze auf Plausibilität und Konsistenz geprüft. Vier Klassen werden unterschieden.",
+      "checkedTitle": "Was wird geprüft?",
+      "uploadBehaviorTitle": "Was passiert beim Upload?",
+      "uploadBehavior": "Logik-Fehler (z.B. Tod vor Diagnose, Diagnose in der Zukunft) blockieren den Upload. Ein Modal listet die betroffenen Datensätze; eine CSV-Liste kann zur Korrektur in der Quelldatei heruntergeladen werden. Plausibilität, Outlier und Duplikate fließen durch und erscheinen erst auf der Ergebnisseite.",
+      "resultsPanelTitle": "Was kann ich auf der Ergebnisseite tun?",
+      "resultsPanel": "Im Anomalie-Panel sind die Datensätze nach Klasse gruppiert. Pro Patient gibt es eine Checkbox, zusätzlich Bulk-Toggle pro Klasse und eine 'Alle exkludieren'-Aktion. Exkludierte Patienten fließen aus KM, Cox, Log-Rank, Tabelle und Excel-Export sofort raus. Der Zustand wird pro Datensatz in sessionStorage gespeichert (Tab-Reload behält ihn, neuer Tab nicht).",
+      "outlierNoteTitle": "Hinweis zu Outliern",
+      "outlierNote": "Outlier werden einmalig auf der Original-Kohorte berechnet und bleiben statisch, auch wenn Sie Outlier exkludieren. Sonst entstünde eine kaskadierende Liste.",
+      "ruleTableTitle": "Vollständige Regel-Tabelle",
+      "ruleTableHeader": {
+        "ruleId": "Regel-ID",
+        "class": "Klasse",
+        "severity": "Verhalten",
+        "threshold": "Schwelle"
+      }
+    }
+  },
+  "Impressum": {
+    "title": "Impressum",
+    "intro": "Angaben gemäß §5 TMG.",
+    "notConfigured": {
+      "title": "Betreiberangaben fehlen",
+      "body": "Der Betreiber dieser ONCOcurve-Instanz hat noch keine Impressumsangaben hinterlegt. Betreiber legen sie in config/betreiber.json ab (Vorlage: config/betreiber.beispiel.json)."
+    },
+    "invalidConfig": {
+      "title": "Betreiberangaben fehlerhaft",
+      "body": "Die Datei config/betreiber.json dieser Instanz ist fehlerhaft. Bitte wenden Sie sich an den Betreiber."
+    },
+    "copyrightLaw": {
+      "title": "Haftungsausschluss",
+      "body": "Diese Software wird unentgeltlich und ohne jegliche Gewährleistung bereitgestellt. Es werden insbesondere keine Zusicherungen hinsichtlich Richtigkeit, Vollständigkeit, technischer Eignung oder rechtlicher Konformität der durch die Software erzeugten Ergebnisse gegeben. Jegliche Haftung für direkte oder indirekte Schäden, die aus der Nutzung dieser Software entstehen, ist ausgeschlossen, soweit gesetzlich zulässig. Die Verantwortung für die Prüfung der korrekten Auswertung und Darstellung der mit dieser Software verarbeiteten Daten liegt ausschließlich beim Anwender."
+    },
+    "copyright": {
+      "title": "© COPYRIGHT",
+      "body": "Der Quellcode von ONCOcurve ist freie Software. Copyright © 2025–2026 Universitätsklinikum Ulm (Comprehensive Cancer Center Ulm, CCCU).\nSie dürfen ihn unter den Bedingungen der GNU Affero General Public License, Version 3 (AGPL-3.0), nutzen, verändern und weitergeben. Wer eine veränderte Fassung als Netzwerkdienst anbietet, muss deren Quellcode unter derselben Lizenz offenlegen.\nLogos und Markenzeichen des Universitätsklinikums Ulm, des CCCU und von ONCOnnect sind von dieser Lizenz ausgenommen."
+    }
+  },
+  "MultiSelect": {
+    "placeholder": "Auswählen...",
+    "searchPlaceholder": "Suchen...",
+    "empty": "Keine Treffer",
+    "selectAll": "Alle auswählen",
+    "clearAll": "Alle löschen",
+    "selectedCount": "{count} ausgewählt",
+    "moreCount": "+{count} mehr"
+  },
+  "TumorSelect": {
+    "title": "Tumortypen",
+    "placeholder": "Tumortypen auswählen",
+    "selectedCount": "{count} ausgewählt",
+    "selectedLabel": "Ausgewählt ({count})",
+    "actions": {
+      "clearAll": "Alle löschen"
+    }
+  },
+  "TumorCategorySelect": {
+    "title": "Tumor-Kategorien",
+    "placeholder": "Tumor-Kategorien auswählen",
+    "selectedCount": "{selected} von {total} ausgewählt",
+    "moreCount": "+{count} mehr",
+    "actions": {
+      "clearAll": "Alle löschen"
+    },
+    "sections": {
+      "solid": "Solide Tumore ({count})",
+      "hematological": "Hämatologische Tumore ({count})"
+    }
+  },
+  "ICD10Select": {
+    "title": "ICD-10 Codes",
+    "placeholder": "ICD-10 Codes auswählen",
+    "searchPlaceholder": "Code suchen...",
+    "selectedCount": "{count} ausgewählt",
+    "moreCount": "+{count} mehr",
+    "selectAll": "Alle auswählen",
+    "clearAll": "Alle löschen",
+    "empty": "Keine Codes gefunden"
+  },
+  "YearRangePicker": {
+    "title": "Diagnosejahr",
+    "placeholder": "Jahre auswählen",
+    "allYears": "Alle Jahre",
+    "singleYear": "Einzeljahr",
+    "range": "Zeitraum",
+    "rangeLabel": "Jahresbereich",
+    "fromYear": "Von",
+    "toYear": "Bis",
+    "fromYearLabel": "Von Jahr",
+    "toYearLabel": "Bis Jahr",
+    "quickPresets": "Schnellauswahl",
+    "presets": {
+      "lastYear": "Letztes Jahr",
+      "last3Years": "Letzte 3 Jahre",
+      "last5Years": "Letzte 5 Jahre",
+      "last10Years": "Letzte 10 Jahre"
+    },
+    "actions": {
+      "apply": "Anwenden",
+      "cancel": "Abbrechen",
+      "clear": "Löschen"
+    },
+    "yearCount": "{count} Jahre"
+  },
+  "CoxAnalysis": {
+    "title": "Cox-Regression",
+    "groupsLabel": "Gruppen",
+    "referenceGroupLabel": "Referenzgruppe",
+    "referenceGroup": "Referenz: {name}",
+    "resultsTitle": "Ergebnisse",
+    "forestPlotTitle": "Forest-Plot",
+    "stats": {
+      "reference": "Referenzgruppe",
+      "ties": "Tie-Methode",
+      "concordance": "Konkordanz (C)",
+      "likelihoodRatio": "Likelihood-Ratio-Test p"
+    },
+    "export": {
+      "pngTitle": "PNG exportieren",
+      "svgTitle": "SVG exportieren"
+    },
+    "noData": "Keine Daten verfügbar",
+    "labels": {
+      "hr": "HR",
+      "ciLower": "KI unten",
+      "ciUpper": "KI oben"
+    },
+    "table": {
+      "group": "Gruppe",
+      "n": "N",
+      "events": "Ereignisse",
+      "hazardRatio": "Hazard Ratio",
+      "pValue": "p-Wert"
+    },
+    "notEstimable": "nicht schätzbar",
+    "notEstimableShort": "n. b.",
+    "notEstimableHint": "Gruppe ohne Ereignisse: das Hazard Ratio ist nicht schätzbar (vollständige Separation).",
+    "tooltip": {
+      "hr": "HR {hr} (KI {lower}-{upper}), p={pValue}",
+      "ciLower": "KI unten: {lower}",
+      "ciUpper": "KI oben: {upper}"
+    },
+    "aria": {
+      "hr": "Hazard Ratio {hr}",
+      "ci": "Konfidenzintervall {lower}-{upper}, HR {hr}, p {pValue}",
+      "ciLower": "KI unten {lower}",
+      "ciUpper": "KI oben {upper}"
+    },
+    "phTestGlobal": "Globaler PH-Test p={pValue}",
+    "phTestPerCoefficient": "{name}: rho {rho}, p={pValue}",
+    "phTestTooltip": "rho {rho}, p={pValue}",
+    "tiesMethodLabel": "Ties-Methode",
+    "tiesEfron": "Efron (empfohlen)",
+    "tiesBreslow": "Breslow",
+    "info": {
+      "title": "Interpretation",
+      "body": "Hazard Ratios vergleichen jede Gruppe mit der Referenz.",
+      "items": {
+        "reference": "Referenzgruppe hat HR = 1.",
+        "significance": "Kleinere p-Werte bedeuten starkere Evidenz.",
+        "phAssumption": "Setzt proportionale Hazards voraus."
+      }
+    }
+  },
+  "Stratification": {
+    "title": "Stratifizierung",
+    "description": "Wählen Sie ein Kriterium zur Aufteilung der Kohorte.",
+    "criterionLabel": "Kriterium",
+    "noData": "Daten nicht vorhanden",
+    "noDiseaseFreeSurvivalData": "Rezidiv-, Metastasen- und Nachsorgedaten fehlen in diesem Datensatz",
+    "criteria": {
+      "icd10": "ICD-10",
+      "entityStaging": "Entitätenspezifisches Staging",
+      "fromFile": "Aus Datei"
+    },
+    "groups": {
+      "allPatients": "Alle Patienten"
+    },
+    "groupSelection": "{enabled} von {total} Gruppen aktiv",
+    "labels": {
+      "primaryCase": "Primärfall: {value}",
+      "location": "Lokalisation: {value}",
+      "tumorId": "Tumor-ID: {value}",
+      "startDate": "Startdatum: {value}",
+      "endDate": "Endedatum: {value}",
+      "tCategory": "T-Kategorie: {value}",
+      "uicc": "UICC: {value}",
+      "grading": "Grading: {value}",
+      "entityStage": "{entity} (Stadium {stage})",
+      "stageSingle": "Stadium {stage}",
+      "noMatch": "Keine Übereinstimmung",
+      "notAvailable": "Nicht verfügbar",
+      "notReported": "Keine Angabe"
+    },
+    "entityStaging": {
+      "title": "Entitätenspezifisches Staging",
+      "body": "Basierend auf der TNM-Klassifikation maligner Tumoren, 9. Auflage (Wittekind, Wiley-VCH).",
+      "link": "TNM-Klassifikation öffnen",
+      "entityLabel": "Entität: {value}",
+      "entityPlural": "{count} Entitäten ausgewählt",
+      "icdLabel": "ICD-10: {value}",
+      "icdPlural": "{count} ICD-10-Codes ausgewählt",
+      "noneSelected": "Keine Entität oder ICD-10-Code ausgewählt",
+      "descriptionSingle": "TNM-Stadien nach Wiley 9. Auflage für diese Entität.",
+      "descriptionPlural": "TNM-Stadien nach Wiley 9. Auflage für diese Entitäten.",
+      "descriptionIcd": "TNM-Stadien nach Wiley 9. Auflage.",
+      "selectPrompt": "Bitte wählen Sie mindestens eine Tumorkategorie oder ICD-10-Code aus."
+    },
+    "dfsSettings": {
+      "title": "DFS-Einstellungen",
+      "startLabel": "Startdatum",
+      "diagnosisDate": "Diagnosedatum",
+      "description": "Diagnosedatum als DFS-Start verwenden."
+    },
+    "cardinality": {
+      "title": "Stratifizierung nicht möglich",
+      "body": "Spalte „{column}\" enthält {n} verschiedene Werte - zu viele für eine sinnvolle Stratifizierung. Bitte gruppieren Sie die Werte in der Quelldatei zu größeren Kategorien."
+    }
+  },
+  "Anomaly": {
+    "title": "Anomalie-Warnungen",
+    "findingsCount": "{count} Auffälligkeiten",
+    "excludeAll": "Alle Anomalien exkludieren",
+    "resetSelection": "Auswahl zurücksetzen",
+    "excludedCount": "{excluded} von {total} Patienten exkludiert",
+    "emptyAfterExclusion": "Alle Patienten exkludiert - keine Berechnung möglich",
+    "outlierMinCohort": "Statistische Outlier benötigen mindestens 30 Patienten",
+    "viewPatient": "Anzeigen",
+    "showAllRows": "{shown} von {total} angezeigt - alle anzeigen",
+    "columnPatientId": "Patienten-ID",
+    "columnRule": "Regel",
+    "columnFields": "Felder",
+    "tabs": {
+      "logic": "Logik",
+      "plausibility": "Plausibilität",
+      "outlier": "Outlier",
+      "duplicate_or_missing": "Duplikate / Fehlend",
+      "excludeAllInClass": "Alle dieser Klasse exkludieren",
+      "excluded": "Exkludiert",
+      "excludedClasses": "Klassen"
+    },
+    "rules": {
+      "death_before_diagnosis": "Tod vor Diagnose",
+      "last_contact_before_diagnosis": "Letzter Kontakt vor Diagnose",
+      "diagnosis_in_future": "Diagnose in der Zukunft",
+      "negative_survival_time": "Negative Überlebenszeit",
+      "age_out_of_range": "Alter außerhalb [0, 120]",
+      "dead_without_death_date": "Verstorben ohne Sterbedatum",
+      "tnm_t0_with_metastasis": "T0 mit M1",
+      "tnm_prefix_missing": "TNM ohne c/p-Präfix: Stadium nicht berechnet, weil die Entität klinisch und pathologisch getrennt gruppiert",
+      "survival_over_25_years": "Überleben über 25 Jahre",
+      "very_short_followup_alive": "Sehr kurze Nachbeobachtung trotz lebend (< 30 Tage)",
+      "diagnosis_year_unrealistic": "Diagnosejahr unrealistisch (< 1950)",
+      "age_outlier": "Alter im 1./99. Perzentil",
+      "survival_outlier": "Überlebenszeit im 99. Perzentil",
+      "diagnosis_date_outlier": "Diagnosedatum im äußeren 5%",
+      "duplicate_patient_id": "Doppelte Patient-ID",
+      "missing_diagnosis_date": "Fehlendes Diagnosedatum",
+      "missing_vital_status": "Fehlender Vitalstatus",
+      "oncobox_multiple_primaries": "Mehrere Primärfälle derselben Person",
+      "oncobox_no_follow_up": "Kein Verlauf und kein Sterbedatum",
+      "oncobox_no_primary_marker": "Box ohne Primärfallmarker",
+      "oncobox_no_diagnosis_code": "Kein verwertbarer Diagnosecode"
+    },
+    "upload": {
+      "title": "Logik-Fehler erkannt",
+      "intro": "Die folgenden Datensätze enthalten unmögliche Werte und müssen in der Quelldatei korrigiert werden, bevor die Analyse fortgesetzt werden kann.",
+      "cancel": "Abbrechen",
+      "downloadCsv": "Liste als CSV herunterladen",
+      "groupedHeader": "{ruleLabel}: {count}"
+    }
+  },
+  "Binning": {
+    "title": "Binning für „{column}\"{unit, select, _ {} other { ({unit})}}",
+    "distribution": "Verteilung: n={n}, min={min}, max={max}, median={median}, q25={q25}, q75={q75}",
+    "modeQuantiles": "Quantile",
+    "modeManual": "Eigene Schwellen",
+    "quantilesMedian": "Median (2 Gruppen)",
+    "quantilesTertile": "Tertile (3 Gruppen)",
+    "quantilesQuartile": "Quartile (4 Gruppen)",
+    "quantilesQuintile": "Quintile (5 Gruppen)",
+    "manualPlaceholder": "z.B. 50, 100, 200",
+    "preview": "Vorschau:",
+    "apply": "Stratifizierung anwenden",
+    "helpButton": "Hilfe",
+    "emptyBinsWarning": {
+      "title": "{empty} von {total} Gruppen sind leer",
+      "body": "Leere Gruppen werden nicht im KM-Plot angezeigt. Reduzieren Sie die Anzahl der Bins (z.B. Tertile statt Quartile) oder definieren Sie eigene Schwellen, damit alle Patienten erfasst werden."
+    },
+    "help": {
+      "intro": "Wann welches Binning?",
+      "quartile": "Quartile (4 Gruppen): robust, statistisch etabliert, gut für explorative Analysen.",
+      "tertile": "Tertile (3 Gruppen): bei kleiner Stichprobe (<100), wenn Quartile zu kleine Gruppen ergeben.",
+      "median": "Median (2 Gruppen): einfacher binärer Vergleich „niedrig vs hoch\".",
+      "manual": "Eigene Schwellen: bei klinisch etablierten Schwellenwerten.",
+      "rule": "Daumenregel: mindestens 10 Patienten pro Gruppe für aussagekräftige KM-Kurven, 20+ für Log-rank-Tests."
+    }
+  },
+  "UploadValidation": {
+    "required": {
+      "title": "Datei kann nicht analysiert werden",
+      "body": "Folgende Pflichtspalten konnten nicht erkannt werden. Akzeptierte Spaltennamen siehe Hilfe-Seite → Datenupload.",
+      "button": "Verstanden / Datei wählen"
+    },
+    "recommended": {
+      "title": "Eingeschränkte Funktionalität",
+      "body": "Folgende Spalten wurden nicht erkannt - die zugehörigen Funktionen sind nicht verfügbar. Sie können die Analyse trotzdem fortsetzen.",
+      "proceedButton": "Trotzdem fortfahren",
+      "cancelButton": "Datei korrigieren"
+    },
+    "fields": {
+      "event": "Event-Status / Vital-Status (z.B. Spalte „event\", „status\", „vital_status\")",
+      "survivalTime": "Überlebenszeit ODER Diagnosedatum + Endedatum",
+      "id": "Patienten-ID (z.B. „id\", „patient_id\", „pid\") - wird sonst auto-generiert",
+      "tumorType": "ICD-10 / Diagnose (z.B. „icd10\", „diagnosis\") - ICD-Filter und Entitäts-Stratifizierung sind sonst nicht verfügbar",
+      "diagnosisDate": "Diagnosedatum (z.B. „diagnosis_date\", „erstdiagnose\") - Diagnosejahr-Filter ist sonst nicht verfügbar"
+    }
+  },
+  "UnitConversionBanner": {
+    "title": "Automatische Einheiten-Konversion",
+    "body": "Spalte „{column}\": {n} Werte von „{from}\" nach „{to}\" umgerechnet (Faktor ×{factor}), damit alle Werte vergleichbar sind.",
+    "hint": "Bitte überprüfen Sie die Quelldatei und laden Sie sie ggf. mit einheitlichen Einheiten neu hoch."
+  },
+  "Endpoint": {
+    "title": "Endpunkt",
+    "titleCertification": "Zertifizierung",
+    "centerType": "Zentrumstyp",
+    "centerTypeDetected": "aus der Datei erkannt",
+    "required": "Pflicht",
+    "alternative": "alternativ",
+    "lockedRule": "Rechenvorschrift noch nicht freigegeben",
+    "lockedData": "Dieser Datensatz enthält das Feld {field} nicht",
+    "lockedTtftDataset": "Dieser Datensatz ist auf die Zeit bis zur Ersttherapie ausgelegt und führt keine Gesamtüberlebenszeit",
+    "names": {
+      "oas": "Gesamtüberleben",
+      "ttft": "Zeit bis zur Ersttherapie",
+      "lrr": "Lokalrezidivrate",
+      "lrfs": "Lokalrezidivfreies Überleben",
+      "mfs": "Metastasenfreies Überleben",
+      "dfs": "Krankheitsfreies Überleben",
+      "pfs": "Progressionsfreies Überleben",
+      "pps": "Überleben ab Progression"
+    },
+    "centers": {
+      "BZ": "Brustkrebszentrum",
+      "DZ": "Darmkrebszentrum",
+      "LZ": "Lungenkrebszentrum",
+      "PZ": "Prostatakrebszentrum",
+      "OZ": "Onkologisches Zentrum",
+      "GZ": "Gynäkologisches Krebszentrum",
+      "HZ": "Hauttumorzentrum",
+      "HAEZ": "Zentrum für Hämatologische Neoplasien",
+      "MB": "Modul Harnblasenkrebszentrum",
+      "MH": "Modul Hodenkrebszentrum",
+      "MN": "Modul Nierenkrebszentrum",
+      "MP": "Modul Pankreaskarzinomzentrum",
+      "MPEN": "Modul Peniskarzinomzentrum"
+    }
+  },
+  "OncoBox": {
+    "metrics": {
+      "title": "Kennzahlen der Box",
+      "subtitle": "Aufstellung nach dem Auswertungsblatt der Box",
+      "primaryCases": "Primärfälle",
+      "excludedTotal": "davon ausgeschlossen",
+      "atRisk": "Unter Risiko zu Beginn",
+      "withEvent": "mit Ereignis",
+      "competingEvent": "mit konkurrierendem Ereignis",
+      "censoredAlive": "zensiert, lebend",
+      "censoredDeceased": "zensiert, verstorben",
+      "unrated": "keiner Kategorie zuzuordnen",
+      "cohortNote": "Bezugsgrösse sind die Primärfälle nach den gesetzten Filtern. Die Spezifikation bezieht sich auf die ungefilterte Grundgesamtheit.",
+      "noSpecTitle": "Keine Vorgaben zur Überlebensanalyse",
+      "noSpec": "Die Spezifikation dieser Box enthält derzeit kein Auswertungsblatt zur Überlebensanalyse. Die Box wird noch entwickelt, weitere Definitionen liegen bislang nicht vor.",
+      "exclusion": {
+        "postoperativNichtTumorfrei": "Postoperativ nicht tumorfrei (M1 oder R1/R2)",
+        "krebsvorerkrankung": "Relevante Krebsvorerkrankung",
+        "keinFollowUp": "Keine gültige Follow-up-Meldung",
+        "keinUiccStadium": "Kein UICC-Stadium dokumentiert",
+        "uiccVier": "UICC-Stadium IV",
+        "postoperativVerstorben": "Postoperativ verstorben",
+        "synchronerPrimaertumor": "Synchroner Primärtumor",
+        "keineVollremission": "Keine Vollremission",
+        "keinDiagnosedatum": "Kein Diagnosedatum",
+        "unkategorisiert": "Keiner Fallkategorie zuzuordnen",
+        "keineProgression": "Keine Progression dokumentiert"
+      }
+    },
+    "tabTitle": "OncoBoxen",
+    "dropPrompt": "OncoBox-XML hier ablegen oder klicken",
+    "detected": "Erkannt: {box} {version}",
+    "counts": "{patients} Patienten, {cases} Fälle, {followUps} Follow-ups",
+    "supported": "Unterstützt: Brust, Darm und Lunge 2.0, Brust 1.0, Darm 1.0",
+    "samplesTitle": "Beispieldaten",
+    "samplesOrigin": "Musterlösungen von OnkoZert",
+    "noFollowUpHint": "ohne Verlaufsdaten",
+    "loadSample": "Laden",
+    "dropNeedsXml": "Bitte eine XML-Datei ablegen.",
+    "boxes": {
+      "brust": "OncoBox Brust",
+      "darm": "OncoBox Darm",
+      "lunge": "OncoBox Lunge",
+      "prostata": "OncoBox Prostata"
+    }
+  }
+}

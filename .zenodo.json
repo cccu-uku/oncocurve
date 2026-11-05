@@ -1,0 +1,36 @@
+{
+  "title": "ONCOcurve",
+  "upload_type": "software",
+  "description": "<p>ONCOcurve is a browser-based application for survival analysis of oncological cohorts. It computes Kaplan-Meier curves, log-rank tests (including weighted variants), Cox regression and cumulative incidence with competing risks from cancer registry exports (oBDS XML), OncoBox XML files and simple tables (CSV, TSV, Excel). Import, validation and analysis run entirely in the browser; no analysis data are uploaded to or stored on the server.</p><p>ONCOcurve is developed at the Comprehensive Cancer Center Ulm (CCCU), Universitätsklinikum Ulm, as part of the ONCOnnect consortium. Prebuilt container images are available as ghcr.io/cccu-uku/oncocurve and docker.io/cccuuku/oncocurve.</p><p>ONCOcurve is not a medical device within the meaning of the MDR/IVDR.</p>",
+  "creators": [
+    {
+      "name": "Stiegler, Veronika",
+      "orcid": "0000-0002-0675-4853",
+      "affiliation": "Universitätsklinikum Ulm (Comprehensive Cancer Center Ulm, CCCU)"
+    }
+  ],
+  "notes": "Funded in part by the Deutsche Krebshilfe (ONCOnnect Network, grant 70115654).",
+  "access_right": "open",
+  "license": "agpl-3.0-only",
+  "language": "eng",
+  "keywords": [
+    "survival analysis",
+    "Kaplan-Meier",
+    "Cox regression",
+    "log-rank test",
+    "competing risks",
+    "cancer registry",
+    "oBDS",
+    "OncoBox",
+    "oncology",
+    "privacy-preserving",
+    "browser-based"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/cccu-uku/oncocurve",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}
