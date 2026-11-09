@@ -984,6 +984,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/swc-darwin-x64@npm:16.4.5":
+  version: 16.4.5
+  resolution: "@next/swc-darwin-x64@npm:16.4.5"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
 "@next/swc-linux-arm64-gnu@npm:16.4.2":
   version: 16.4.2
   resolution: "@next/swc-linux-arm64-gnu@npm:16.4.2"
@@ -7483,7 +7490,7 @@ __metadata:
     "@eslint/js": "npm:^9.39.4"
     "@next/eslint-plugin-next": "npm:^16.4.2"
     "@next/swc-darwin-arm64": "npm:16.4.2"
-    "@next/swc-darwin-x64": "npm:16.4.2"
+    "@next/swc-darwin-x64": "npm:16.4.5"
     "@next/swc-linux-arm64-gnu": "npm:16.4.2"
     "@next/swc-linux-x64-gnu": "npm:16.4.2"
     "@next/swc-win32-x64-msvc": "npm:16.4.2"
