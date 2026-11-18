@@ -675,12 +675,25 @@ function parsePatientElement(element: Element, index: number): Patient | null {
   // Residualstatus (optional): R0 = kein Residualtumor lokal
   const residualstatus = verlaufElement?.getElementsByTagName("Residualstatus")[0]?.textContent?.trim() || null;
 
-  // Letzter Kontakt über ALLE Meldungen aggregieren. In oBDS ist jeder Verlauf
-  // eine eigene Meldung (Meldeanlass="Verlauf"); getElementsByTagName sucht
-  // rekursiv über den ganzen Patienten, daher sammeln wir jedes Verlaufs-,
-  // Nachsorge-, Melde- und Therapiedatum und nehmen das späteste. Zuvor las der
-  // Parser nur Meldung[0] und übersah damit alle späteren Follow-ups -> viel zu
-  // kurze bzw. fehlende Überlebenszeiten bei zensierten Patienten.
+  // Letztes Lebenddatum über ALLE Meldungen aggregieren. In oBDS ist jeder
+  // Verlauf / jede Therapie eine eigene Meldung; getElementsByTagName sucht
+  // rekursiv über den ganzen Patienten, daher sammeln wir alle Daten, die einen
+  // Kontakt mit der lebenden Person belegen, und nehmen das späteste. Zuvor las
+  // der Parser nur Meldung[0] und übersah damit alle späteren Follow-ups -> viel
+  // zu kurze bzw. fehlende Überlebenszeiten bei zensierten Patienten.
+  // Quellen:
+  // - Untersuchungsdatum_Verlauf, Nachsorge_Datum (Verlauf/Legacy)
+  // - Tumorzuordnung/Diagnosedatum (auch Folgetumor-Meldungen)
+  // - Fernmetastase/Diagnosedatum
+  // - SYST/Beginn, Bestrahlung/Beginn, OP/Datum (Therapiebeginn)
+  // Nachmeldungen mit Diagnose/Therapie werden für Verstorbene nicht mehr
+  // geschickt, belegen also, dass die Person zu diesem Zeitpunkt lebte.
+  // NICHT verwendet: Meldedatum (Datum der Meldung, kein Patientenkontakt;
+  // Nachmeldungen nach dem Tod würden die Überlebenszeit verlängern),
+  // Fruehere_Tumorerkrankung/Diagnosedatum (nur Jahr der Vorgeschichte) und
+  // generisches <Datum> ohne passendes Elternelement (z. B. Zusatzitem, TNM).
+  // Verworfen werden ungültige Daten, Jahr < 1920 (Platzhalter wie 1900-07-01),
+  // Daten nach heute und Datumsgenauigkeit="V" (vollständig geschätzt).
   const parseObdsDate = (s?: string | null): Date | null => {
     if (!s) return null;
     const trimmed = s.trim();
@@ -692,32 +705,57 @@ function parsePatientElement(element: Element, index: number): Patient | null {
     }
     return isNaN(d.getTime()) ? null : d;
   };
-  const collectLatestDate = (tags: string[]): Date | null => {
+  // Plausibles Lebenddatum: gültig, Jahr >= 1920, nicht nach heute und nicht
+  // vollständig geschätzt (Datumsgenauigkeit="V").
+  const endOfToday = new Date();
+  endOfToday.setHours(23, 59, 59, 999);
+  const parseVitalDate = (el: Element): Date | null => {
+    if (el.getAttribute("Datumsgenauigkeit")?.trim().toUpperCase() === "V") return null;
+    const d = parseObdsDate(el.textContent);
+    if (!d) return null;
+    if (d.getFullYear() < 1920 || d.getTime() > endOfToday.getTime()) return null;
+    return d;
+  };
+  // Spätestes Datum aus Kind-Tag; ist parentTag gesetzt, zählt das Element nur,
+  // wenn sein direktes Elternelement so heißt (z. B. SYST → Beginn).
+  const collectLatestDate = (sources: Array<[parentTag: string | null, childTag: string]>): Date | null => {
     let best: number | null = null;
-    for (const tag of tags) {
-      const els = element.getElementsByTagName(tag);
+    for (const [parentTag, childTag] of sources) {
+      const els = element.getElementsByTagName(childTag);
       for (let i = 0; i < els.length; i++) {
-        const d = parseObdsDate(els[i]?.textContent);
+        const el = els[i];
+        if (parentTag && el.parentElement?.localName !== parentTag) continue;
+        const d = parseVitalDate(el);
         if (d) { const tt = d.getTime(); if (best === null || tt > best) best = tt; }
       }
     }
     return best === null ? null : new Date(best);
   };
   const latestContact = collectLatestDate([
-    "Untersuchungsdatum_Verlauf", "Nachsorge_Datum", "Meldedatum",
-    "Therapie_Beginn", "Therapie_Ende",
+    [null, "Untersuchungsdatum_Verlauf"],
+    [null, "Nachsorge_Datum"],
+    ["Tumorzuordnung", "Diagnosedatum"],
+    ["Fernmetastase", "Diagnosedatum"],
+    ["SYST", "Beginn"],
+    ["Bestrahlung", "Beginn"],
+    ["OP", "Datum"],
   ]);
 
   // Follow-up-Datum: Erweiterte Prioritätsliste für maximale Patienten-Inklusion
   // KLINISCHE KONTAKTE (valide für Zensierung, event=0):
   // 1. Sterbedatum (definitives Enddatum, event=1)
-  // 2. Nachsorge_Datum (wichtigster Follow-up-Termin)
-  // 3. Untersuchungsdatum_Verlauf (Verlaufsdokumentation)
-  // 4. OP_Datum (Operationsdatum)
-  // 5. Therapie_Beginn (Behandlungsstart)
-  // 6. Zusatzitem_Datum (neuestes aus Menge_Zusatzitem, oft klinische Zusatzdaten)
-  // 7. Letzte_Kontrolle (medizinischer Kontrolltermin)
-  // WICHTIG: Diagnosedatum wird NICHT verwendet, da followupDate != diagnosisDate sein muss
+  // 2. Letztes Lebenddatum über alle Meldungen (latestContact, Quellen s. o.:
+  //    Verlauf/Nachsorge, Diagnosedatum Tumor/Fernmetastase, Beginn SYST/
+  //    Bestrahlung, OP-Datum)
+  // Fallbacks (nur Meldung[0], greifen nur ohne latestContact):
+  // 3. Nachsorge_Datum
+  // 4. Untersuchungsdatum_Verlauf
+  // 5. OP_Datum
+  // 6. Therapie_Beginn (Legacy-Element, in oBDS 3 nicht vorhanden)
+  // 7. Zusatzitem_Datum (neuestes aus Menge_Zusatzitem)
+  // 8. Letzte_Kontrolle (medizinischer Kontrolltermin)
+  // WICHTIG: Ist das späteste Lebenddatum gleich dem Diagnosedatum des Falls,
+  // gibt es kein Follow-up (followupDate = null, s. Validierung unten).
   
   let followupDate: Date | null = null;
   let followupDateSource = "none";
@@ -729,7 +767,7 @@ function parsePatientElement(element: Element, index: number): Patient | null {
     hasClinicalContact = true; // Tod ist definitiver klinischer Endpoint
   } else if (latestContact) {
     followupDate = latestContact;
-    followupDateSource = "letzter Kontakt (aggregiert über alle Meldungen)";
+    followupDateSource = "letztes Lebenddatum (aggregiert über alle Meldungen)";
     hasClinicalContact = true;
   } else if (nachsorgeDatum) {
     followupDate = new Date(nachsorgeDatum);
@@ -756,8 +794,6 @@ function parsePatientElement(element: Element, index: number): Patient | null {
     followupDateSource = "Letzte_Kontrolle";
     hasClinicalContact = true; // Letzte Kontrolle ist medizinischer Kontakt
   }
-  // Diagnosedatum wird NICHT als followupDate verwendet, da followupDate != diagnosisDate sein muss
-  
   // Validierung: followupDate darf nicht gleich diagnosisDate sein
   if (followupDate && diagnosisDate && diagnosisDate !== "Unbekannt") {
     const diagDate = new Date(diagnosisDate);
