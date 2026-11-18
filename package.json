@@ -1,6 +1,6 @@
 {
   "name": "oncocurve",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ONCOcurve – Kaplan-Meier-Überlebensanalyse für onkologische Kohorten, vollständig im Browser",
   "license": "AGPL-3.0-only",
   "type": "module",
