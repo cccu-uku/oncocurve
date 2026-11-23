@@ -56,7 +56,7 @@
     "react-server-dom-turbopack": "^19.2.9",
     "react-server-dom-webpack": "^19.2.9",
     "sonner": "^2.0.7",
-    "tailwind-merge": "^2.6.1",
+    "tailwind-merge": "^3.7.1",
     "tailwindcss-animate": "^1.0.7",
     "zustand": "^5.0.11"
   },
