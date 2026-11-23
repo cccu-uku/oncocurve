@@ -7064,12 +7064,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.525.0":
-  version: 0.525.0
-  resolution: "lucide-react@npm:0.525.0"
+"lucide-react@npm:^1.77.0":
+  version: 1.77.0
+  resolution: "lucide-react@npm:1.77.0"
   peerDependencies:
+    "@types/react": "*"
     react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10c0/81c4438e2cf1c86ea2ebe0a97b378201512450894283cccce766a89bc6a4e47c8df1d9115d845d98f582bb0a10be31c454aa232520fea35018dac1cd8466ea9b
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/602824e6080ae948bfeb875fef90b6ae341edaf9991d434405245460699ef3a7ed8aacb5c604cc2211794f4941179c13b1e43c0a9c0858964705b1b673a16f74
   languageName: node
   linkType: hard
 
@@ -7577,7 +7581,7 @@ __metadata:
     jsdom: "npm:^29.1.1"
     jspdf: "npm:^4.2.1"
     lodash: "npm:^4.18.1"
-    lucide-react: "npm:^0.525.0"
+    lucide-react: "npm:^1.77.0"
     next: "npm:^16.4.6"
     next-intl: "npm:^4.8.2"
     next-themes: "npm:^0.4.6"
