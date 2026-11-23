@@ -95,7 +95,7 @@
     "tailwindcss": "^4.2.4",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8",
-    "vitest": "^4.1.12",
+    "vitest": "^5.1.1",
     "webpack": "^5.106.2"
   },
   "optionalDependencies": {
